@@ -1,0 +1,22 @@
+{
+  "name": "activ",
+  "version": "1.0.0",
+  "description": "ecommerce de ropa deportiva",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valemun/grupo_5_Activ.git"
+  },
+  "author": "natalie y valeria",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/valemun/grupo_5_Activ/issues"
+  },
+  "homepage": "https://github.com/valemun/grupo_5_Activ#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
