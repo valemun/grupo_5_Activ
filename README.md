@@ -9,7 +9,7 @@ Tienda en línea de ropa y artículos deportivos
     <li>Hombres y mujeres de 15 a 35 años</li>
     <li>Interesados en actividad física</li>
     <li>Clase media</li>
-    <li>Accessible<li>/
+    <li>Accessible<li>
 </ul>
 
 <h2>Breve descripción de los integrantes:</h2>
