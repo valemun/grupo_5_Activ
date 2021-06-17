@@ -1,0 +1,136 @@
+:root {
+    --blue: #6633FF;
+    --darkblue: #4926b4;
+    --darkgray: #191919;
+    --lightgray: #DDE0E8;
+    --white: #FFF;
+    --orange: #FF8D27;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap');
+
+
+* ​{    
+    box-sizing: ​border-box​;
+    margin: ​0​px​;    
+    padding: ​0​px​;    
+}
+
+body {
+    background-color: var(--white);
+    color: var(--darkgray);
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    margin: unset;
+}
+
+/*Slideshow*/
+
+#slideshow-container {
+    position: relative;
+}
+
+#slideshow-img {
+    background: linear-gradient(0.25turn, #6633FF, #FFF, #FF8D27);
+}
+
+#slideshow-container img {
+    width: 100%;
+}
+
+#slideshow-text {
+    left: 20px;
+    position: absolute;
+    top: 20%;
+}
+
+#slideshow-container p {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    width: 60%;
+}
+
+button {
+    background-color: var(--blue);
+    border-radius: 20px;
+    border: none;
+    color:var(--white);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 5px 10px;
+}
+
+button:hover {
+    background-color: var(--darkblue);
+}
+
+/* Popular ahora */
+
+h2 {
+    font-size: 20px;
+    margin: 40px 0px 30px;
+    text-align: center;
+}
+
+/* Categorias */
+
+.categoria {
+    text-align: center;
+}
+
+.categoria img {
+    width: 80%;
+}
+
+.categoria p {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 0;
+}
+
+/* Banner registro */
+
+#invitacion-registro {
+    background-color: var(--lightgray);
+    font-size: 16px;
+    margin: 40px 0px 10px;
+    padding: 15px 0px;
+    text-align: center;
+}
+
+/* Los favoritos */
+
+#productos-favoritos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#productos-favoritos h2 {
+    width: 100%;
+}
+
+#producto-favorito {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#producto-favorito p {
+    margin: 0;
+}
+
+#producto-favorito .titulo-producto {
+  font-weight: 500;  
+}
+
+#producto-favorito .precio-producto {
+    font-weight: 600;  
+  }
+
+#productos-favoritos img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}

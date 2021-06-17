@@ -1,0 +1,94 @@
+:root {
+    --blue: #6633FF;
+    --darkblue: #4926b4;
+    --darkgray: #191919;
+    --lightgray: #DDE0E8;
+    --white: #FFF;
+    --orange: #FF8D27;
+  }
+
+footer {
+    background-color: var(--lightgray);
+    padding: 30px 30px 10px;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: inherit;
+}
+
+footer i {
+    color: var(--darkblue);
+}
+
+#footer-info i {
+    margin-right: 5px;
+}
+
+.footer-titulo {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.footer-nav ul {
+    margin-top: 5px;
+    padding: 0;
+}
+
+.footer-nav {
+    width: 50%;
+
+}
+
+#footer-promociones p {
+    margin: 5px 0px;
+}
+
+#footer-promociones input {
+    height: 25px;
+    border: 1px solid var(--lightgray);
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+#footer-promociones button {
+    border-radius: 10px;
+}
+
+#footer-promociones button i {
+    color: var(--white);
+}
+
+#footer-redes ul {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+#footer-redes p {
+    margin-top: 5px;
+}
+
+.footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 10px;
+    justify-content: space-between;
+    margin: 0;
+}
+
+
+.flex ul {
+    display: flex;
+    justify-content: center;
+}
+
+.flex ul li {
+    padding: 5px 5px;
+}

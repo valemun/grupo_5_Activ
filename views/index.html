@@ -4,9 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Activ</title>
+    <link rel="icon" href="images/Activ_favicon.png">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="/css/normalize.css" rel="stylesheet">
+
+    <link href="/css/headerStyle.css" rel="stylesheet"/>
+    <link href="/css/indexStyle.css" rel="stylesheet"/>
+    <link href="/css/footerStyle.css" rel="stylesheet"/>
+    
 </head>
 <body>
 
@@ -20,28 +28,34 @@
 
         <nav>
 
-            <ul>
-                <li><a href="">Novedades</a></li>
-                <li><a href="">Mujeres</a></li>
-                <li><a href="">Hombres</a></li>
-            </ul>
+            <div id="hamburger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <div id="displayed-menu">
+                <ul>
+                    <li><a href="">Novedades</a></li>
+                    <li><a href="">Mujeres</a></li>
+                    <li><a href="">Hombres</a></li>
+                </ul>
+            </div>
 
         </nav>
 
-        <div id="search-bar">
+        <div id="side-nav">
 
-            <form action="">
-                <input type="text" placeholder="Buscar" name="search">
-                <button type="submit"><i class="fa fa-search"></i></button>
-            </form>
-            
-        </div>
+            <div id="search-bar">
 
-        <div id="login-carrito">
+                <form action="">
+                    <input type="text" placeholder="Buscar" name="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+                
+            </div>
 
             <ul>
-                <li><i class="fas fa-user"></i></li>
-                <li><i class="fas fa-shopping-cart"></i></li>
+                <li><a href=""><i class="fas fa-user"></i></a></li>
+                <li><a href=""><i class="fas fa-shopping-cart"></i></a></li>
             </ul>
 
         </div>
@@ -52,9 +66,14 @@
 
         <div id="slideshow-container">
 
-            <img src="images/carousel0.jpg" alt="clase-de-yoga">
-            <p>Entrena y da lo mejor de ti</p>
-            <button>Empieza ya</button>
+            <div id="slideshow-img">
+                <img src="images/carousel0.jpg" alt="clase-de-yoga">
+            </div>
+
+            <div id="slideshow-text">
+                <p>Entrena y da lo mejor de ti</p>
+                <button>Empieza ya</button>
+            </div>
 
         </div>
 
@@ -91,28 +110,28 @@
             <h2>Los favoritos</h2>
 
             <article id="producto-favorito">
-                <img>
+                <img src="images\product-placeholder.jpg" alt="product">
                 <p class="titulo-producto">Articulo</p>
                 <p class="descripcion-producto">Descripción</p>
                 <p class="precio-producto">$199.80</p>
             </article>
 
             <article id="producto-favorito">
-                <img>
+                <img src="images\product-placeholder.jpg" alt="product">
                 <p class="titulo-producto">Articulo</p>
                 <p class="descripcion-producto">Descripción</p>
                 <p class="precio-producto">$199.80</p>
             </article>
 
             <article id="producto-favorito">
-                <img>
+                <img src="images\product-placeholder.jpg" alt="product">
                 <p class="titulo-producto">Articulo</p>
                 <p class="descripcion-producto">Descripción</p>
                 <p class="precio-producto">$199.80</p>
             </article>
 
             <article id="producto-favorito">
-                <img>
+                <img src="images\product-placeholder.jpg" alt="product">
                 <p class="titulo-producto">Articulo</p>
                 <p class="descripcion-producto">Descripción</p>
                 <p class="precio-producto">$199.80</p>
@@ -124,70 +143,80 @@
 
     <footer>
 
-        <div id="footer-info">
+        <div class="footer-top">
 
-            <p><a href=""><i class="fas fa-globe-americas"></i> México</a></p>
-            <p><a href=""><i class="fas fa-credit-card"></i> Métodos de pago</a></p>
-            <p><a href=""><i class="fas fa-paper-plane"></i> Envíanos un comentario</a></p>
-            
+            <div id="footer-info" class="footer-nav">
+
+                <p><a href=""><i class="fas fa-globe-americas"></i>  México</a></p>
+                <p><a href=""><i class="fas fa-credit-card"></i>  Métodos de pago</a></p>
+                <p><a href=""><i class="fas fa-paper-plane"></i>  Envíanos un comentario</a></p>
+                
+            </div>
+
+            <div class="footer-nav" id="footer-productos">
+
+                <p class="footer-titulo">PRODUCTOS</p>
+                <ul>
+                    <li class="footer-item"><a href="">Tenis</a></li>
+                    <li class="footer-item"><a href="">Tops</a></li>
+                    <li class="footer-item"><a href="">Bottoms</a></li>
+                    <li class="footer-item"><a href="">Accesorios</a></li>
+                </ul>
+
+            </div>
+
+            <div class="footer-nav" id="footer-asistencia">
+
+                <p class="footer-titulo">ASISTENCIA</p>
+                <ul>
+                    <li class="footer-item"><a href="">Ayuda</a></li>
+                    <li class="footer-item"><a href="">FAQ</a></li>
+                    <li class="footer-item"><a href="">Entregas y devoluciones</a></li>
+                </ul>
+
+            </div>
+
+            <div class="footer-nav" id="footer-promociones">
+
+                <p class="footer-titulo">PROMOCIONES</p>
+                <p class="footer-item">Sé el primero en enterarte de nuestras promociones</p>
+                <form id="inscribir-correo" action="">
+                    <input type="text" placeholder="Ingresa tu correo">
+                    <button type="submit"><i class="fas fa-share"></i></button>
+                </form>
+
+            </div>
+
+            <div class="flex" id="footer-redes">
+                
+                <ul>
+                    <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                    <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                </ul>
+                <p class="footer-item">¡Siguenos en nuestras Redes!</p>
+
+            </div>
+
         </div>
 
-        <div id="footer-productos">
-
-            <p class="footer-titulo">PRODUCTOS</p>
-            <ul>
-                <li class="footer-item"><a href="">Tenis</a></li>
-                <li class="footer-item"><a href="">Tops</a></li>
-                <li class="footer-item"><a href="">Bottoms</a></li>
-                <li class="footer-item"><a href="">Accesorios</a></li>
-            </ul>
-
-        </div>
-
-        <div id="footer-asistencia">
-
-            <p class="footer-titulo">ASISTENCIA</p>
-            <ul>
-                <li class="footer-item"><a href="">Ayuda</a></li>
-                <li class="footer-item"><a href="">FAQ</a></li>
-                <li class="footer-item"><a href="">Entregas y devoluciones</a></li>
-            </ul>
-
-        </div>
-
-        <div id="footer-promociones">
-
-            <p class="footer-titulo">PROMOCIONES</p>
-            <p class="footer-item">Sé el primero en enterarte de nuestras promociones</p>
-            <form id="inscribir-correo" action="">
-                <input type="text" placeholder="Ingresa tu correo">
-                <button type="submit"><i class="fas fa-share"></i></button>
-            </form>
-
-        </div>
-
-        <div id="footer-redes">
-            
-            <ul>
-                <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href=""><i class="fab fa-instagram"></i></a></li>
-                <li><a href=""><i class="fab fa-twitter"></i></a></li>
-            </ul>
-            <p class="footer-item">¡Siguenos en nuestras Redes!</p>
-
-        </div>
+        <div class="footer-bottom">
         
-        <div id="footer-políticas">
+            <div class="flex" id="footer-políticas">
 
-            <ul>
-                <li><a href="">Términos y condiciones</a></li>
-                <li><a href="">Políticas de privacidad</a></li>
-                <li><a href="">Cookies</a></li>
-            </ul>
-        
+                <ul>
+                    <li><a href="">Términos y condiciones</a></li>
+                    <li>|</li>
+                    <li><a href="">Políticas de privacidad</a></li>
+                    <li>|</li>
+                    <li><a href="">Cookies</a></li>
+                </ul>
+            
+            </div>
+
+            <p>© 2021 Activ México S.A. de C.V. Todos los derechos reservados</p>
+
         </div>
-
-        <p>© 2021 Activ México S.A. de C.V. Todos los derechos reservados</p>
 
     </footer>
     
