@@ -12,9 +12,10 @@ header {
     display: flex;
     flex-wrap: nowrap;
     position: relative;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     z-index: 1;
+    padding: 0px 20px;
 }
 
 #activ-logo {
