@@ -44,20 +44,36 @@ footer i {
     margin: 5px 0px;
 }
 
+.footer-correo {
+    position: relative;
+    display: inline-block;
+}
+
 #footer-promociones input {
-    height: 25px;
-    border: 1px solid var(--lightgray);
     border-radius: 5px;
+    border: 1px solid var(--lightgray);
     font-family: inherit;
     font-size: inherit;
+    height: 25px;
+    outline-color: var(--orange);
+    width: 130px;
 }
 
 #footer-promociones button {
+    background-color: var(--white);
     border-radius: 10px;
+    padding: 0;
+    position: absolute;
+    right: 7px;
+    top: 5px;
 }
 
 #footer-promociones button i {
-    color: var(--white);
+    color: var(--blue);
+}
+
+#footer-promociones button:hover i{
+    color: var(--orange);
 }
 
 #footer-redes ul {
@@ -67,6 +83,10 @@ footer i {
 
 #footer-redes p {
     margin-top: 5px;
+}
+
+#footer-redes i{
+    font-size: 18px;
 }
 
 .footer-top {
@@ -79,7 +99,7 @@ footer i {
     display: flex;
     flex-wrap: wrap;
     font-size: 10px;
-    justify-content: space-between;
+    justify-content: center;
     margin: 0;
 }
 
@@ -92,3 +112,31 @@ footer i {
 .flex ul li {
     padding: 5px 5px;
 }
+
+@media (min-width: 560px) { }
+
+@media (min-width: 720px) {
+
+    .footer-nav {
+        width: 20%;
+    
+    }
+
+    .footer-bottom {
+        justify-content: space-between;
+    }
+
+    .footer-top {
+        margin-bottom: 20px;
+    }
+    
+}
+
+@media (min-width: 990px) {
+
+    .footer-nav {
+        width: 15%;
+    }
+
+}
+    

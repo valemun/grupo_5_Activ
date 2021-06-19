@@ -7,15 +7,18 @@
   }
 
 header {
+    align-items: center;
     background-color: var(--white);
     box-shadow: 0px 0px 10px #353535;
+    box-sizing: border-box;
     display: flex;
     flex-wrap: nowrap;
-    position: relative;
     justify-content: space-between;
-    align-items: center;
-    z-index: 1;
     padding: 0px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
 }
 
 #activ-logo {
@@ -34,6 +37,7 @@ a {
 a:hover {
     color: var(--orange);
 }
+
 
 nav {
     order: -1;
@@ -81,6 +85,7 @@ header ul li {
     border-radius: 5px;
     font-family: inherit;
     font-size: inherit;
+    outline-color: var(--orange);
 }
 
 #search-bar button{
@@ -99,7 +104,61 @@ i:hover {
     color: var(--orange);
 }
 
+main {
+    margin-top: 54.8px;
+}
+
+
 @media (min-width: 560px) { }
 
-@media (min-width: 990px) { }
+@media (min-width: 720px) {
+
+    nav {
+        order: 0;
+    }
+
+    nav #hamburger-menu i {
+        display: none;
+    }
+    
+    nav #displayed-menu {
+        display: block;
+    }
+
+    header nav ul li {
+        font-size: 14px;
+        padding: 5px 15px;
+    }
+
+    nav a:after {
+        transition: all ease-in-out .4s;
+        background: none repeat scroll 0 0 var(--orange);
+        content: "";
+        display: block;
+        height: 2px;
+        width: 0;
+    }
+    nav a:hover:after {
+        width: 100%;
+    }
+
+    #search-bar {
+        position: relative;
+        padding: 10px 10px;
+    }
+
+    #search-bar input{
+        display: block;
+        width: 150px;
+    }
+
+    #search-bar button{
+        padding: 0px 0px;
+        float: right;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+    }
+
+}
     
