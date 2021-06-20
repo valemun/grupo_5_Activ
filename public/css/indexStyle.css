@@ -105,7 +105,7 @@ h2 {
 /* Los favoritos */
 
 #productos-favoritos {
-    padding: 0px 20px;
+    padding: 0px 30px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -176,6 +176,11 @@ h2 {
         width: 100%;
         height: unset;
     }
+
+    #productos-favoritos h2 {
+        text-align: left;
+        padding: 0px 30px;
+    }
 }
 
 @media (min-width: 890px) { 
@@ -198,6 +203,11 @@ h2 {
         font-size: 2vw;
     }
 
+    /*Productos favoritos */
+
+    #productos-favoritos h2 {
+        padding: 0px 50px;
+    }
 
 }
     

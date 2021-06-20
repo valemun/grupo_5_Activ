@@ -25,6 +25,14 @@ footer i {
     margin-right: 5px;
 }
 
+.foot-info:hover i {
+    color: var(--darkblue);
+}
+
+.foot-info:hover p {
+    color: var(--orange);
+}
+
 .footer-titulo {
     font-weight: 600;
     margin-bottom: 5px;
