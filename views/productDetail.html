@@ -12,7 +12,7 @@
     <link href="/css/normalize.css" rel="stylesheet">
 
     <link href="/css/headerStyle.css" rel="stylesheet"/>
-    <link href="/css/indexStyle.css" rel="stylesheet"/>
+    <link href="/css/productStyle.css" rel="stylesheet"/>
     <link href="/css/footerStyle.css" rel="stylesheet"/>
     
 </head>
@@ -56,8 +56,8 @@
             </div>
 
             <ul>
-                <li><a href=""><i class="fas fa-user"></i></a></li>
-                <li><a href=""><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href="/login"><i class="fas fa-user"></i></a></li>
+                <li><a href="/cart"><i class="fas fa-shopping-cart"></i></a></li>
             </ul>
 
         </div>
@@ -68,13 +68,23 @@
 
         <div class="breadcrumbs">
 
-            <p>Home > Mujeres > Bottoms > Leggins Activ X</p>
+            <ul>
+                
+                <li><a href="">Home</a></li>
+                <li><i class="fas fa-chevron-right"></i></li>
+                <li><a href="">Mujeres</a></li>
+                <li><i class="fas fa-chevron-right"></i></li>
+                <li><a href="">Bottoms</a></li>
+                <li><i class="fas fa-chevron-right"></i></li>
+                <li><a href="">Leggins Activ X</a></li>
+
+            </ul>
 
         </div>
 
-        <section class="product-detail">
+        <section class="product-area">
 
-            <div class="product-photos">
+            <div class="product-photos flex-items">
 
                 <div class="side-pics">
 
@@ -86,20 +96,20 @@
 
                 <div class="main-pic">
 
-                    <img>
+                    <img src="images/product-leggins.jpg" alt="Leggins">
 
                 </div>
 
             </div>
 
-            <div class="product-details">
+            <div class="product-details flex-items">
                 
                 <div class="product-info">
 
-                    <p class="titulo-producto">Leggins Activ X</p>
+                    <h1 class="titulo-producto">Leggins Activ X</h1>
+                    <p class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></p>
                     <p class="precio-producto">$450.00</p>
-                    <p class="star-rating">stars</p>
-                    <p class="descripcion-producto">Descripción del producto</p>
+                    <p class="descripcion-producto">Leggins de material duradero y cómodos</p>
 
                 </div>
 
@@ -110,6 +120,7 @@
                         <div class="product-size">
 
                             <label for="size">Tamaño</label>
+                            <input type="radio" value="xs" name="size" id="size"> XS 
                             <input type="radio" value="s" name="size" id="size"> S 
                             <input type="radio" value="m" name="size" id="size"> M 
                             <input type="radio" value="l" name="size" id="size"> L 
@@ -132,7 +143,7 @@
 
                         <div class="product-color">
 
-                            <label for="color">Cantidad</label>
+                            <label for="color">Color</label>
                             <select name="color">
                                 <option value="AZ">Azul</option>
                                 <option value="RS">Rosa</option>
@@ -144,8 +155,8 @@
 
                         <div class="product-buttons">
 
-                            <button type="submit">Agregar a carrito</button>
-                            <button type="button">Favoritos</button>
+                            <button type="submit" id="carrito">Agregar a carrito</button>
+                            <button type="button" id="favoritos">Favoritos</button>
 
                         </div>
 
@@ -155,7 +166,7 @@
 
             </div>
 
-            <aside class="delivery-details">
+            <aside class="delivery-details flex-items">
 
                 <p>Envíos gratuitos en compras superiores a $999.</p>
                 <p>Los envíos tardan usualmente de una a dos semanas. 
@@ -172,32 +183,56 @@
 
             <h2>Articulos parecidos</h2>
 
-            <article id="producto-favorito">
-                <img src="images\product-placeholder.jpg" alt="product">
+            <article class="producto-favorito">
+                
+                <a href="/product">
+                <div class="foto-favorito">
+                    <img src="images\product-placeholder.jpg" alt="product">
+                </div>
                 <p class="titulo-producto">Articulo</p>
                 <p class="descripcion-producto">Descripción</p>
                 <p class="precio-producto">$199.80</p>
+                </a>
+            
             </article>
 
-            <article id="producto-favorito">
-                <img src="images\product-placeholder.jpg" alt="product">
+            <article class="producto-favorito">
+
+                <a href="/product">
+                <div class="foto-favorito">
+                    <img src="images\product-placeholder.jpg" alt="product">
+                </div>
                 <p class="titulo-producto">Articulo</p>
                 <p class="descripcion-producto">Descripción</p>
                 <p class="precio-producto">$199.80</p>
+                </a>
+
             </article>
 
-            <article id="producto-favorito">
-                <img src="images\product-placeholder.jpg" alt="product">
+            <article class="producto-favorito">
+
+                <a href="/product">
+                <div class="foto-favorito">
+                    <img src="images\product-placeholder.jpg" alt="product">
+                </div>
                 <p class="titulo-producto">Articulo</p>
                 <p class="descripcion-producto">Descripción</p>
                 <p class="precio-producto">$199.80</p>
+                </a>
+
             </article>
 
-            <article id="producto-favorito">
-                <img src="images\product-placeholder.jpg" alt="product">
+            <article class="producto-favorito">
+
+                <a href="/product">
+                <div class="foto-favorito">
+                    <img src="images\product-placeholder.jpg" alt="product">
+                </div>
                 <p class="titulo-producto">Articulo</p>
                 <p class="descripcion-producto">Descripción</p>
                 <p class="precio-producto">$199.80</p>
+                </a>
+
             </article>
             
         </section>
@@ -211,7 +246,7 @@
                 <div class="user-review">
 
                     <p class="review-title">¡Me encanto!</p>
-                    <p class="star-rating">stars</p>
+                    <p class="star-rating"><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
                     <p class="review-desc">El corte es hermoso y queda super bien! Solamento recomiendo comprar una talla más grande.
                     </p>
 

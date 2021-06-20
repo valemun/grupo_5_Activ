@@ -9,6 +9,7 @@
 
 footer {
     background-color: var(--lightgray);
+    font-size: 12px;
     padding: 30px 30px 10px;
 }
 

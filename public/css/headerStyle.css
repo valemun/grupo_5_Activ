@@ -63,8 +63,8 @@ header ul {
     padding: inherit;
 }
 
-header ul li {
-    padding: 5px 10px;
+header li {
+    padding: 0px 10px;
 }
 
 #side-nav {
