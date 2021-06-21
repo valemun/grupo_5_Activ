@@ -84,6 +84,7 @@ h2 {
 .categoria img {
     object-fit: cover;
     height: 150px;
+    vertical-align: middle;
     width: 100%;
 }
 
@@ -97,7 +98,7 @@ h2 {
         position: absolute;
         top: 0;
         width:100%;
-        height:98%;
+        height:100%;
         left: 0;
         background-color:#000;
         opacity:0.4;
