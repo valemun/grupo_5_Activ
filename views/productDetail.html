@@ -70,8 +70,6 @@
 
             <ul>
                 
-                <li><a href="">Home</a></li>
-                <li><i class="fas fa-chevron-right"></i></li>
                 <li><a href="">Mujeres</a></li>
                 <li><i class="fas fa-chevron-right"></i></li>
                 <li><a href="">Bottoms</a></li>
@@ -83,6 +81,15 @@
         </div>
 
         <section class="product-area">
+
+            <div class="product-info mobile flex-items">
+
+                <h1 class="titulo-producto">Leggins Activ X</h1>
+                <p class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></p>
+                <p class="precio-producto">$450.00</p>
+                <p class="descripcion-producto">Leggins de material duradero y cómodos</p>
+
+            </div>
 
             <div class="product-photos flex-items">
 
@@ -104,10 +111,15 @@
 
             <div class="product-details flex-items">
                 
-                <div class="product-info">
+                <div class="product-info desktop">
 
                     <h1 class="titulo-producto">Leggins Activ X</h1>
-                    <p class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></p>
+                    <p class="star-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <i class="far fa-star"></i></p>
                     <p class="precio-producto">$450.00</p>
                     <p class="descripcion-producto">Leggins de material duradero y cómodos</p>
 
@@ -120,36 +132,51 @@
                         <div class="product-size">
 
                             <label for="size">Tamaño</label>
-                            <input type="radio" value="xs" name="size" id="size"> XS 
-                            <input type="radio" value="s" name="size" id="size"> S 
-                            <input type="radio" value="m" name="size" id="size"> M 
-                            <input type="radio" value="l" name="size" id="size"> L 
+
+                            <div class="sizes">
+                                <input type="radio" value="xs" name="size" id="size"> XS 
+                            </div>
+                            <div class="sizes">
+                                <input type="radio" value="s" name="size" id="size"> S 
+                            </div>
+                            <div class="sizes">
+                                <input type="radio" value="m" name="size" id="size"> M 
+                            </div>
+                            <div class="sizes">
+                                <input type="radio" value="l" name="size" id="size"> L 
+                            </div>
+                            <div class="sizes">
                             <input type="radio" value="xl" name="size" id="size"> XL 
+                            </div>
 
                         </div>
 
-                        <div class="product-count">
+                        <div class="product-selections">
 
-                            <label for="count">Cantidad</label>
-                            <select name="count">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
+                            <div class="product-count">
 
-                        </div>
+                                <label for="count">Cantidad</label>
+                                <select name="count">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
 
-                        <div class="product-color">
+                            </div>
 
-                            <label for="color">Color</label>
-                            <select name="color">
-                                <option value="AZ">Azul</option>
-                                <option value="RS">Rosa</option>
-                                <option value="VR">Verde</option>
-                                <option value="RJ">Rojo</option>
-                            </select>
+                            <div class="product-color">
+
+                                <label for="color">Color</label>
+                                <select name="color">
+                                    <option value="AZ">Azul</option>
+                                    <option value="RS">Rosa</option>
+                                    <option value="VR">Verde</option>
+                                    <option value="RJ">Rojo</option>
+                                </select>
+
+                            </div>
 
                         </div>
 
@@ -179,14 +206,14 @@
 
         </section>
 
-        <section id="productos-favoritos">
+        <section id="productos-parecidos">
 
             <h2>Articulos parecidos</h2>
 
-            <article class="producto-favorito">
+            <article class="producto-parecido">
                 
                 <a href="/product">
-                <div class="foto-favorito">
+                <div class="foto-parecido">
                     <img src="images\product-placeholder.jpg" alt="product">
                 </div>
                 <p class="titulo-producto">Articulo</p>
@@ -196,10 +223,10 @@
             
             </article>
 
-            <article class="producto-favorito">
+            <article class="producto-parecido">
 
                 <a href="/product">
-                <div class="foto-favorito">
+                <div class="foto-parecido">
                     <img src="images\product-placeholder.jpg" alt="product">
                 </div>
                 <p class="titulo-producto">Articulo</p>
@@ -209,10 +236,10 @@
 
             </article>
 
-            <article class="producto-favorito">
+            <article class="producto-parecido">
 
                 <a href="/product">
-                <div class="foto-favorito">
+                <div class="foto-parecido">
                     <img src="images\product-placeholder.jpg" alt="product">
                 </div>
                 <p class="titulo-producto">Articulo</p>
@@ -222,10 +249,10 @@
 
             </article>
 
-            <article class="producto-favorito">
+            <article class="producto-parecido">
 
                 <a href="/product">
-                <div class="foto-favorito">
+                <div class="foto-parecido">
                     <img src="images\product-placeholder.jpg" alt="product">
                 </div>
                 <p class="titulo-producto">Articulo</p>
@@ -249,6 +276,8 @@
                     <p class="star-rating"><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
                     <p class="review-desc">El corte es hermoso y queda super bien! Solamento recomiendo comprar una talla más grande.
                     </p>
+                    <p class="review-user">@valemun</p>
+                    <hr>
 
                 </div>
 
@@ -256,7 +285,15 @@
 
             <div class="new-review">
 
+                <p>¡Deja tu reseña!</p>
+
                 <form action="" method="">
+
+                    <div class="input-stars">
+
+                        <p class="star-rating"><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
+
+                    </div>
 
                     <div class="input-title">
 
@@ -266,7 +303,7 @@
 
                     <div class="input-desc">
 
-                        <textarea placeholder="Titulo" name="review-desc"></textarea>
+                        <textarea placeholder="Tu reseña" name="review-desc"></textarea>
 
                     </div>
 

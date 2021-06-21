@@ -59,7 +59,8 @@ button:hover {
     font-size: 10px;
 }
 
-/*product area*/
+/* Product area */
+
 .product-area {
     display: flex;
     flex-wrap: wrap;
@@ -80,11 +81,18 @@ button:hover {
 /* Product details */
 
 .product-details {
-    padding: 0px 15px;
-    order: -1;
+    padding: 0px 25px;
 }
 
 /* Product info */
+
+.mobile {
+    padding: 0px 25px;
+}
+
+.desktop {
+    display: none;
+}
 
 .product-info h1 {
     font-size: 24px;
@@ -114,34 +122,52 @@ button:hover {
 
 .product-selection label {
     display: block;
-    font-size: initial;
     font-weight: 500;
-    margin-bottom: 5px;
+    margin: 20px 0px 10px;
 }
 
-.product-selection {
-    font-size: 12px;
+.product-size {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0px 20px;
+}
+
+.product-size  label {
+    width: 100%;
+}
+
+.product-selections {
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .product-selection select {
-    width: 55px;
-    height: 25px;
+    margin-top: 3px;
+    width: 100px;
+    height: 35px;
 }
 
 .product-buttons {
     margin-top: 25px;
+    text-align: center;
 }
 
 .product-buttons button{
     border: 2.5px var(--blue) solid;
-    display: block;
-    margin: 15px 0px;
-    width: 250px;
+    margin: 13px 5px;
+    padding: 5px 0px;
+    width: 80%;
 }
 
 .product-buttons #favoritos {
     background-color: var(--white);
     color: var(--blue);
+}
+
+aside {
+    padding: 0px 25px;
+    font-size: 14px;
 }
 
 /* Titulos */
@@ -152,117 +178,136 @@ h2 {
     text-align: center;
 }
 
-/* Categorias */
+/* Articulos parecidos */
 
-.categoria {
-    text-align: center;
-}
-
-.categoria img {
-    object-fit: cover;
-    height: 150px;
-    width: 100%;
-}
-
-.categoria .foto {
-    width: 85%;
-    position: relative;
-    display: inline-block;
-}
-
-.foto:hover .overlay {
-        position: absolute;
-        top: 0;
-        width:100%;
-        height:98%;
-        left: 0;
-        background-color:#000;
-        opacity:0.4;
-        z-index: 1;
-        display: block;
-}
-
-.categoria p {
-    font-size: 16px;
-    font-weight: 600;
-    margin-top: 0;
-}
-
-/* Banner registro */
-
-#invitacion-registro {
-    background-color: var(--lightgray);
-    font-size: 16px;
-    margin: 40px 0px 10px;
-    padding: 20px 0px;
-    text-align: center;
-}
-
-/* Los favoritos */
-
-#productos-favoritos {
+#productos-parecidos {
+    font-size: 14px;
     padding: 0px 20px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
-#productos-favoritos h2 {
+#productos-parecidos h2 {
     width: 100%;
 }
 
-.arrow {
-    padding: 9% 0px;
-    text-align: center;
-    width: 5%;
-}
-
-.producto-favorito {
+.producto-parecido {
     margin-bottom: 30px;
     text-align: center;
-    width: 20%;
+    width: 45%;
 }
 
-.producto-favorito a:hover {
+.producto-parecido a:hover {
     color: var(--darkgray);
 }
 
-.foto-favorito{
+.foto-parecido{
     margin: 1px 1px;
     display: block;
     overflow: hidden;
     width: 100%;
 }
 
-#productos-favoritos img {
+#productos-parecidos img {
     transition: transform 0.5s;
     vertical-align: middle;
     width: 100%;
 }
 
-.foto-favorito:hover > img {
+.foto-parecido:hover > img {
     transform: scale(1.1);
     vertical-align: middle;
 }
 
-.producto-favorito p {
+.producto-parecido p {
     margin: 0;
 }
 
-.producto-favorito .titulo-producto {
+.producto-parecido .titulo-producto {
   font-weight: 500;  
 }
 
-.producto-favorito .precio-producto {
+.producto-parecido .precio-producto {
     font-weight: 600;  
   }
+
+/* Reseñas */
+
+.reviews {
+    padding: 0px 20px;
+}
+
+.user-review {
+    margin: 0px 0px 15px;
+}
+
+.reviews p {
+    margin: 5px 0px;
+}
+
+.review-title {
+    font-weight: 500;
+}
+
+.reviews .star-rating i {
+    color: var(--orange);
+}
+
+p.review-desc{
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+p.review-user{
+    margin: 0;
+    font-size: 12px;
+    color: var(--blue);
+}
+
+.new-review {
+    text-align: center;
+    margin: 0px 0px 15px;
+}
+
+.new-review p {
+    font-weight: 500;
+}
+
+.new-review input {
+    border-color: var(--lightgray);
+    border-radius: 5px;
+    font-family: inherit;
+    height: 20px;
+    margin-bottom: 10px;
+    width: 70%;
+}
+
+.new-review textarea{
+    border-color: var(--lightgray);
+    border-radius: 5px;
+    width: 70%;
+    height: 50px;
+    font-family: inherit;
+}
+
+.new-review button{
+    border: 2.5px var(--blue) solid;
+    margin: 13px 5px;
+    padding: 5px 0px;
+    width: 60%;
+}
 
 @media (min-width: 560px) { 
 
 
 }
 
-@media (min-width: 720px) { 
+@media (min-width: 720px) {
+
+    .product-buttons button{
+        display: block;
+    }
 
     /* Categoria */
 
