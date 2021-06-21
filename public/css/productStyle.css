@@ -90,13 +90,17 @@ button:hover {
     width: 100%;
 }
 
-img.side-pic {
+.side-pic {
     line-height: 0;
     padding: 0px 5px;
     width: 30%;
     height: 70%;
-    object-fit: cover;
     display: block;
+}
+
+.side-pic img {
+    width: 100%;
+    object-fit: cover;
 }
 
 .main-pic {
@@ -374,13 +378,16 @@ p.review-user{
     }
     
     .side-pics {
-        width: 25%;
+        width: 20%;
     }
     
-    img.side-pic {
-        vertical-align: bottom;
+    .side-pic {
         width: 100%;
-        height: 20%;
+        height: 50px;
+    }
+
+    .side-pic img {
+        width: 100%;
     }
     
     .main-pic {
