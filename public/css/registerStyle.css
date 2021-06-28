@@ -1,0 +1,180 @@
+:root {
+    --blue: #6633FF;
+    --darkblue: #4926b4;
+    --darkgray: #191919;
+    --lightgray: #DDE0E8;
+    --white: #FFF;
+    --orange: #FF8D27;
+    --darkorange: #d16201;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap');
+
+
+* ​{    
+    box-sizing: ​border-box​;
+    margin: ​0​px​;    
+    padding: ​0​px​;    
+}
+
+body {
+    background-color: var(--white);
+    color: var(--darkgray);
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    margin: unset;
+}
+
+
+button {
+    background-color: var(--blue);
+    border-radius: 20px;
+    border: none;
+    color:var(--white);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--darkblue);
+}
+
+.centrado {
+    font-weight: bold;
+    text-align: center;
+}
+
+.pequeño {
+    font-size: 12px;
+    text-align: center;
+}
+
+
+.caja-main-bottom {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.caja-img {
+    display: flex;
+    width: auto;
+    align-items: stretch;
+
+}
+
+.caja-registro {
+    display: flex;
+    width: 280px;
+    height: 530px;
+    padding: 12px;
+    margin: 20px 20px 20px 30px;
+    border: solid 1px gray;
+    border-radius: 5%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.caja-main-top{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fa-facebook-square {
+    font-size: 23px;
+}
+.fa-google-plus-square{
+    font-size: 26px;
+}
+
+.leyenda1 {
+    display: flex;
+    width: 350px;
+    height: 150px;
+    padding: 12px;
+    margin: 20px 20px 20px 30px;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.leyenda2 {
+    display: flex;
+    width: 500px;
+    height: 150px;
+    padding: 12px;
+    margin: 20px 20px 20px 30px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tipo {
+    font-size: 15px;
+    margin: 5px;
+    text-align: justify;
+    color:gray;
+}
+.tipo1 {
+    font-size: 7px;
+    margin: 5px;
+    text-align: center;
+}
+
+#slideshow-container {
+    position: relative;
+}
+
+#slideshow-img {
+    background: linear-gradient(0.25turn, #6633FF, #FFF, #FF8D27);
+}
+
+#slideshow-container img {
+    width: 140%;
+}
+
+
+#slideshow-container p {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    width: 80%;
+}
+
+/* Titulos */
+
+h2 {
+    font-size: 20px;
+    margin: 30px 0px 20px;
+    text-align: justify;
+}
+
+@media (min-width: 560px) { 
+
+    
+
+}
+
+@media (min-width: 720px) {
+
+
+
+}
+
+@media (min-width: 890px) { 
+
+
+
+}

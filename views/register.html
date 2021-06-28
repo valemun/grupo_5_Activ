@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Activ</title>
+    <link rel="icon" href="images/Activ_favicon.png">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="/css/normalize.css" rel="stylesheet">
+
+    <link href="/css/headerStyle.css" rel="stylesheet"/>
+    <link href="/css/registerStyle.css" rel="stylesheet"/>
+    <link href="/css/footerStyle.css" rel="stylesheet"/>
+    
+</head>
+<body>
+
+    <header>
+
+        <div id="activ-logo">
+
+            <a href="/">
+            <img src="images/Activ_logo.png" alt="Activ_logo">
+            </a>
+
+        </div>
+
+        <nav>
+
+            <div id="hamburger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <div id="displayed-menu">
+                <ul>
+                    <li><a href="">Novedades</a></li>
+                    <li><a href="">Mujeres</a></li>
+                    <li><a href="">Hombres</a></li>
+                </ul>
+            </div>
+
+        </nav>
+
+        <div id="side-nav">
+
+            <div id="search-bar">
+
+                <form action="">
+                    <input type="text" placeholder="Buscar" name="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+                
+            </div>
+
+            <ul>
+                <li><a href="/login"><i class="fas fa-user"></i></a></li>
+                <li><a href="/cart"><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+
+        </div>
+
+    </header>
+
+    <main>
+
+        <section class="caja-main-bottom">
+
+            <div class="caja-img">
+                
+                <div id="slideshow-container">
+
+                    <div>
+                        <img src="images/chica.jpg" alt="jumper">
+                    </div>
+        
+                </div>
+            </div>
+
+            <div class="caja-registro">
+                <h2>Regístrate</h2>
+
+                <p>¿Aún no eres miembro?</p>
+                <form action="/login" method="POST">
+                    <p>
+                        <label for="Nombre">Nombre:</label><br>
+                        <input type="text" name="Nombre">&nbsp;&nbsp;<i class="fas fa-user"></i>
+                    </p>
+                    <p>
+                        <label for="Apellido">Apellido:</label><br>
+                        <input type="text" name="Apellido">
+                    </p>
+                    <p>
+                        <label for="Correo">Correo:</label><br>
+                        <input type="email" name="Correo">&nbsp;&nbsp;<i class="fas fa-at"></i>
+                    </p>
+                    <p>
+                        <label for="Confirmar correo">Confirmar correo:</label><br>
+                        <input type="email" name="Confirmar correo">
+                    </p>
+                    <p>
+                        <label for="Contraseña">Contraseña:</label><br>
+                        <input type="password" name="Contraseña">&nbsp;&nbsp;<i class="fas fa-key"></i>
+                    </p>
+                    <p>
+                        <label for="Confirmar contraseña">Confirmar contraseña:</label><br>
+                        <input type="password" name="Confirmar contraseña">
+                    </p>
+                    
+                    <p class="pequeño">
+                        <input type="checkbox" name="aceptance" value="Acepto" checked>
+                        <label for="aceptance">Acepto Términos y Condiciones &nbsp;&nbsp;&nbsp;</label>
+                        <br><br>
+                        <button type="submit">&nbsp;Crear cuenta&nbsp;</button>
+                    </p>
+                </form>
+                <br>
+
+            </div>
+        </section>
+
+
+        <section class="caja-main-top">
+            <div class="leyenda1">
+                <p class="tipo">SERVICIO AL CLIENTE:</p><br>
+                <p class="tipo">Devoluciones&nbsp;&nbsp;<i class="fas fa-exchange-alt"></i></p>
+                <p class="tipo">Entregas&nbsp;&nbsp;<i class="fas fa-truck"></i></p>
+                <p class="tipo">Pagos&nbsp;&nbsp;<i class="far fa-credit-card"></i></p>
+                <p class="tipo">Canales&nbsp;&nbsp;<i class="fas fa-comments"></i></p>
+                <p class="tipo">Ayuda&nbsp;&nbsp;<i class="fas fa-info-circle"></i></p>
+            </div>
+
+            <div class="leyenda2">
+                <p class="centrado">Crea tu cuenta con</p>
+                <div>
+                    <button type="button">&nbsp;Facebook&nbsp;</button> <i class="fab fa-facebook-square"></i> &nbsp;&nbsp;&nbsp;
+                    <button type="button">&nbsp;Google&nbsp;</button> <i class="fab fa-google-plus-square"></i>
+                </div>
+                <br>
+                <p class="tipo1">Puedes cancelar tu suscripción en cualquier momento</p>
+                <p class="tipo1">Al registrar una cuenta aceptas que has leído y que entendiste Términos y Condiciones y das tu consentimiento expreso para cada tipo de transacción que requiera para el procesamiento de sus datos personales bajo la la Política de Privacidad</p>
+            </div>
+
+        </section>
+        
+    </main>
+
+    <footer>
+
+        <div class="footer-top">
+
+            <div id="footer-info" class="footer-nav">
+
+                <p class="foot-info"><a href=""><i class="fas fa-globe-americas"></i>  México</a></p>
+                <p class="foot-info"><a href=""><i class="fas fa-credit-card"></i>  Métodos de pago</a></p>
+                <p class="foot-info"><a href=""><i class="fas fa-paper-plane"></i>  Envíanos un comentario</a></p>
+                
+            </div>
+
+            <div class="footer-nav" id="footer-productos">
+
+                <p class="footer-titulo">PRODUCTOS</p>
+                <ul>
+                    <li class="footer-item"><a href="">Tenis</a></li>
+                    <li class="footer-item"><a href="">Tops</a></li>
+                    <li class="footer-item"><a href="">Bottoms</a></li>
+                    <li class="footer-item"><a href="">Accesorios</a></li>
+                </ul>
+
+            </div>
+
+            <div class="footer-nav" id="footer-asistencia">
+
+                <p class="footer-titulo">ASISTENCIA</p>
+                <ul>
+                    <li class="footer-item"><a href="">Ayuda</a></li>
+                    <li class="footer-item"><a href="">FAQ</a></li>
+                    <li class="footer-item"><a href="">Entregas y devoluciones</a></li>
+                </ul>
+
+            </div>
+
+            <div class="footer-nav" id="footer-promociones">
+
+                <p class="footer-titulo">PROMOCIONES</p>
+                <p class="footer-item">Sé el primero en enterarte de nuestras promociones</p>
+                <form id="inscribir-correo" action="">
+
+                    <div class="footer-correo">
+                        <input type="text" placeholder="Ingresa tu correo">
+                        <button type="submit"><i class="fas fa-share"></i></button>
+                    </div>
+                </form>
+
+            </div>
+
+            <div class="flex" id="footer-redes">
+                
+                <ul>
+                    <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                    <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                </ul>
+                <p class="footer-item">¡Siguenos en nuestras Redes!</p>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+        
+            <div class="flex" id="footer-políticas">
+
+                <ul>
+                    <li><a href="">Términos y condiciones</a></li>
+                    <li>|</li>
+                    <li><a href="">Políticas de privacidad</a></li>
+                    <li>|</li>
+                    <li><a href="">Cookies</a></li>
+                </ul>
+            
+            </div>
+
+            <p>© 2021 Activ México S.A. de C.V. Todos los derechos reservados</p>
+
+        </div>
+
+    </footer>
+    
+</body>
+</html>
