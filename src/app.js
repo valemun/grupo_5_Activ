@@ -2,6 +2,9 @@
 const express = require( "express" );
 const path    = require( "path" );
 
+//routes
+const productsRouter = require( "./routes/products" );
+
 const app     = express();
 
 //Definición de archivos estáticos
@@ -15,22 +18,19 @@ app.listen( 3000, () => {
 
 //Rutas
 app.get( "/", (req, res) => {
-    res.sendFile( path.resolve( "views/index.html" ));
+    res.sendFile( path.resolve( "src/views/index.html" ));
 })
 
-app.get( "/product", (req, res) => {
-    res.sendFile( path.resolve( "views/productDetail.html" ));
-})
+app.use( "/products", productsRouter );
 
 app.get( "/cart", (req, res) => {
-    res.sendFile( path.resolve( "views/shoppingCart.html" ));
+    res.sendFile( path.resolve( "src/views/shoppingCart.html" ));
 })
 
-//estas los tenemos en una pagina junta, a ver que nos dicen los profes para ver como la hacemos
 app.get( "/register", (req, res) => {
-    res.sendFile( path.resolve( "views/register.html" ));
+    res.sendFile( path.resolve( "src/views/register.html" ));
 })
 
 app.get( "/login", (req, res) => {
-    res.sendFile( path.resolve( "views/login.html" ));
+    res.sendFile( path.resolve( "src/views/users/login.html" ));
 })
