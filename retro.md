@@ -28,3 +28,31 @@
 <ul>
     <li>Evitar dejar para los últimos días el comienzo y finalización de las actividades asignadas en cada Sprint.</li>
 </ul>
+
+<h2>Sprint 2</h2>
+
+<h3>Comenzar a hacer:</h3>
+<ul>
+    <li>Juntarnos una vez a la semana para ver avances, dificultades para el cumplimiento del sprint y observaciones sobre posibles mejoras.</li>
+</ul>
+
+<h3>Hacer más:</h3>
+  <ul>  
+    <li>Comunicarnos durante la semana sobre lo que anda haciendo cada miembro y así poder tener un control en los tiempos de entrega del sprint.</li>
+</ul>
+
+<h3>Continuar haciendo:</h3>
+<ul>
+  <li>Crear reuniones para la organización y repartición de actividades entre los miembros del equipo.</li>
+  <li>Seguir actualizando el tablero según se vayan completando las actividades.</li>
+</ul>
+
+<h3>Hacer menos:</h3>
+<ul>
+    <li>Dejar de prolongar actividades más allá del tiempo comprometido.</li>
+</ul>
+
+<h3>Dejar de hacer:</h3>
+<ul>
+    <li>Evitar dejar para la última semana la organización del sprint.</li>
+</ul>
