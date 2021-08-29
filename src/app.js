@@ -1,15 +1,18 @@
-//importación de módulos
+//Imortar módulos
 const express = require( "express" );
-const path    = require( "path" );
-
-//routes
-const productsRouter = require( "./routes/products" );
-
 const app     = express();
+const path    = require( "path" );
+const publicPath = path.resolve( "public" );
+
+//Importar rutas
+const indexRouter = require( "./routes/index" );
+const productsRouter = require( "./routes/products" );
+const userRouter = require( "./routes/user" );
 
 //Definición de archivos estáticos
-const publicPath = path.resolve( "public" );
 app.use( express.static( publicPath ));
+app.set("view engine", "ejs");
+app.set("views", __dirname + "/views");
 
 //Correr servidor
 app.listen( 3000, () => {
@@ -17,20 +20,6 @@ app.listen( 3000, () => {
 });
 
 //Rutas
-app.get( "/", (req, res) => {
-    res.sendFile( path.resolve( "src/views/index.html" ));
-})
-
+app.use( "", indexRouter );
 app.use( "/products", productsRouter );
-
-app.get( "/cart", (req, res) => {
-    res.sendFile( path.resolve( "src/views/shoppingCart.html" ));
-})
-
-app.get( "/register", (req, res) => {
-    res.sendFile( path.resolve( "src/views/register.html" ));
-})
-
-app.get( "/login", (req, res) => {
-    res.sendFile( path.resolve( "src/views/users/login.html" ));
-})
+app.use( "/user", userRouter );

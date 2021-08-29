@@ -2,16 +2,16 @@ const path = require( "path" );
 
 const controller = {
     list: (req, res) => {
-        res.sendFile( path.resolve( "src/views/products/productList.html" ) );
+        res.render( "products/productList" );
     },
     detail: (req, res) => {
-        res.sendFile( path.resolve( "src/views/products/productDetail.html" ) );
+        res.render( "products/productDetail" );
     },
     create: (req, res) => {
-        res.sendFile( path.resolve( "src/views/products/productCreate.html" ) );
+        res.render( "products/productCreate" );
     },
     edit: (req, res) => {
-        res.sendFile( path.resolve( "src/views/products/preoductEdit.html" ) );
+        res.render( "products/productEdit" );
     }
 }
 
