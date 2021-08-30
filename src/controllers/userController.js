@@ -2,16 +2,16 @@ const path = require( "path" );
 
 const controller = {
     profile: (req, res) => {
-        res.render( "productList" );
+        res.render( "users/register" );
     },
     cart: (req, res) => {
-        res.render( "cart" );
+        res.render( "users/cart" );
     },
     login: (req, res) => {
-        res.render( "login" );
+        res.render( "users/login" );
     },
     register: (req, res) => {
-        res.render( "register" );
+        res.render( "users/register" );
     }
 }
 

@@ -20,6 +20,6 @@ app.listen( 3000, () => {
 });
 
 //Rutas
-app.use( "", indexRouter );
-app.use( "/products", productsRouter );
+app.use( "/", indexRouter );
 app.use( "/user", userRouter );
+app.use( "/products", productsRouter );
