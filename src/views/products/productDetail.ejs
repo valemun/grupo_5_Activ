@@ -67,7 +67,7 @@
                 
                 <div class="product-info desktop">
 
-                    <h1 class="titulo-producto">Leggins Activ X</h1>
+                    <h1 class="titulo-producto"><%=producto.nombre%></h1>
                     <p class="star-rating">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -164,57 +164,22 @@
 
             <h2>Articulos parecidos</h2>
 
+            <% for (let i = 0; i < productos.length; i++) { %>
+
             <article class="producto-parecido">
                 
-                <a href="/product">
+                <a href="/products/<%=productos[i].id%>">
                 <div class="foto-parecido">
-                    <img src="/images/product-placeholder.jpg" alt="product">
+                    <img src="<%=productos[i].thumbnail%>" alt="<%=productos[i].alt%>">
                 </div>
-                <p class="titulo-producto">Articulo</p>
-                <p class="descripcion-producto">Descripción</p>
-                <p class="precio-producto">$199.80</p>
+                <p class="titulo-producto"><%=productos[i].nombre%></p>
+                <p class="descripcion-producto"><%=productos[i].desc%></p>
+                <p class="precio-producto">$<%=productos[i].precio%></p>
                 </a>
             
             </article>
 
-            <article class="producto-parecido">
-
-                <a href="/product">
-                <div class="foto-parecido">
-                    <img src="/images/product-placeholder.jpg" alt="product">
-                </div>
-                <p class="titulo-producto">Articulo</p>
-                <p class="descripcion-producto">Descripción</p>
-                <p class="precio-producto">$199.80</p>
-                </a>
-
-            </article>
-
-            <article class="producto-parecido">
-
-                <a href="/product">
-                <div class="foto-parecido">
-                    <img src="/images/product-placeholder.jpg" alt="product">
-                </div>
-                <p class="titulo-producto">Articulo</p>
-                <p class="descripcion-producto">Descripción</p>
-                <p class="precio-producto">$199.80</p>
-                </a>
-
-            </article>
-
-            <article class="producto-parecido">
-
-                <a href="/product">
-                <div class="foto-parecido">
-                    <img src="/images/product-placeholder.jpg" alt="product">
-                </div>
-                <p class="titulo-producto">Articulo</p>
-                <p class="descripcion-producto">Descripción</p>
-                <p class="precio-producto">$199.80</p>
-                </a>
-
-            </article>
+            <% } %>
             
         </section>
 
@@ -224,16 +189,19 @@
 
             <div class="user-reviews">
 
+                <% for (let i = 0; i < review.length; i++) { %>
+
                 <div class="user-review">
 
-                    <p class="review-title">¡Me encanto!</p>
+                    <p class="review-title"><%=review[i].titulo%></p>
                     <p class="star-rating"><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
-                    <p class="review-desc">El corte es hermoso y queda super bien! Solamento recomiendo comprar una talla más grande.
-                    </p>
-                    <p class="review-user">@valemun</p>
+                    <p class="review-desc"><%=review[i].desc%></p>
+                    <p class="review-user">@<%=review[i].usuario%></p>
                     <hr>
 
                 </div>
+
+                <% } %>
 
             </div>
 

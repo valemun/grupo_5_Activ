@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
+
     <%- include( "./partials/head" ) %>
     <link href="/css/indexStyle.css" rel="stylesheet"/>
     
@@ -71,57 +71,22 @@
                 <i class="fas fa-chevron-left"></i>
             </div>
 
+            <% for (let i = 0; i < productos.length; i++) { %>
+
             <article class="producto-favorito">
                 
-                <a href="/product">
+                <a href="/products/<%=productos[i].id%>">
                 <div class="foto-favorito">
-                    <img src="/images/product-placeholder.jpg" alt="product">
+                    <img src="<%=productos[i].thumbnail%>" alt="<%=productos[i].alt%>">
                 </div>
-                <p class="titulo-producto">Articulo</p>
-                <p class="descripcion-producto">Descripción</p>
-                <p class="precio-producto">$199.80</p>
+                <p class="titulo-producto"><%=productos[i].nombre%></p>
+                <p class="descripcion-producto"><%=productos[i].desc%></p>
+                <p class="precio-producto">$<%=productos[i].precio%></p>
                 </a>
             
             </article>
 
-            <article class="producto-favorito">
-
-                <a href="/product">
-                <div class="foto-favorito">
-                    <img src="/images/product-placeholder.jpg" alt="product">
-                </div>
-                <p class="titulo-producto">Articulo</p>
-                <p class="descripcion-producto">Descripción</p>
-                <p class="precio-producto">$199.80</p>
-                </a>
-
-            </article>
-
-            <article class="producto-favorito">
-
-                <a href="/product">
-                <div class="foto-favorito">
-                    <img src="/images/product-placeholder.jpg" alt="product">
-                </div>
-                <p class="titulo-producto">Articulo</p>
-                <p class="descripcion-producto">Descripción</p>
-                <p class="precio-producto">$199.80</p>
-                </a>
-
-            </article>
-
-            <article class="producto-favorito">
-
-                <a href="/product">
-                <div class="foto-favorito">
-                    <img src="/images/product-placeholder.jpg" alt="product">
-                </div>
-                <p class="titulo-producto">Articulo</p>
-                <p class="descripcion-producto">Descripción</p>
-                <p class="precio-producto">$199.80</p>
-                </a>
-
-            </article>
+            <% } %>
 
             <div class="arrow">
                 <i class="fas fa-chevron-right"></i>

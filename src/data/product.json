@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "nombre": "Leggins Activ X",
+        "desc": "Descripción",
+        "precio": "199.80",
+        "thumbnail": "/images/product-placeholder.jpg",
+        "alt": "producto"
+    },
+    {
+        "id": 2,
+        "nombre": "Pants Activ",
+        "desc": "Descripción",
+        "precio": "450.00",
+        "thumbnail": "/images/product-placeholder.jpg",
+        "alt": "producto"
+    },
+    {
+        "id": 3,
+        "nombre": "Sports Bra X",
+        "desc": "Descripción",
+        "precio": "339.50",
+        "thumbnail": "/images/product-placeholder.jpg",
+        "alt": "producto"
+    },
+    {
+        "id": 4,
+        "nombre": "Bandas Activ",
+        "desc": "Descripción",
+        "precio": "500.10",
+        "thumbnail": "/images/product-placeholder.jpg",
+        "alt": "producto"
+    }
+]

@@ -122,13 +122,16 @@ footer i {
     padding: 5px 5px;
 }
 
-@media (min-width: 560px) { }
+@media (min-width: 560px) { 
+    .footer-bottom {
+        justify-content: space-around;
+    }
+}
 
 @media (min-width: 720px) {
 
     .footer-nav {
         width: 20%;
-    
     }
 
     .footer-bottom {
