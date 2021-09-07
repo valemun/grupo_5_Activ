@@ -16,11 +16,11 @@
 
             <ul>
                 
-                <li><a href="">Mujeres</a></li>
+                <li><a href=""><%=producto.breadcrumb[0]%></a></li>
                 <li><i class="fas fa-chevron-right"></i></li>
-                <li><a href="">Bottoms</a></li>
+                <li><a href=""><%=producto.breadcrumb[1]%></a></li>
                 <li><i class="fas fa-chevron-right"></i></li>
-                <li><a href="">Leggins Activ X</a></li>
+                <li><a href=""><%=producto.nombre%></a></li>
 
             </ul>
 
@@ -30,10 +30,10 @@
 
             <div class="product-info mobile flex-items">
 
-                <h1 class="titulo-producto">Leggins Activ X</h1>
+                <h1 class="titulo-producto"><%=producto.nombre%></h1>
                 <p class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></p>
-                <p class="precio-producto">$450.00</p>
-                <p class="descripcion-producto">Leggins de material duradero y cómodos</p>
+                <p class="precio-producto">$<%=producto.precio%></p>
+                <p class="descripcion-producto"><%=producto.desc%></p>
 
             </div>
 
@@ -42,22 +42,22 @@
                 <div class="side-pics">
 
                     <div class="side-pic">
-                        <img src="/images/product-leggins.jpg">
+                        <img src="<%=producto.sidePic%>">
                     </div>
 
                     <div class="side-pic">
-                        <img src="/images/product-leggins.jpg">
+                        <img src="<%=producto.sidePic%>">
                     </div>
 
                     <div class="side-pic">
-                        <img src="/images/product-leggins.jpg">
+                        <img src="<%=producto.sidePic%>">
                     </div>
 
                 </div>
 
                 <div class="main-pic">
 
-                    <img src="/images/product-leggins.jpg" alt="Leggins">
+                    <img src="<%=producto.mainPic%>">
 
                 </div>
 
@@ -74,8 +74,8 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                         <i class="far fa-star"></i></p>
-                    <p class="precio-producto">$450.00</p>
-                    <p class="descripcion-producto">Leggins de material duradero y cómodos</p>
+                    <p class="precio-producto">$<%=producto.precio%></p>
+                    <p class="descripcion-producto"><%=producto.desc%></p>
 
                 </div>
 
@@ -87,21 +87,13 @@
 
                             <label for="size">Tamaño</label>
 
+                            <% for (let i = 0; i < producto.tamano.length; i++) { %>
+
                             <div class="sizes">
-                                <input type="radio" value="xs" name="size" id="size"> XS 
+                                <input type="radio" value="<%=producto.tamano[i]%>" name="size" id="size"> <%=producto.tamano[i]%> 
                             </div>
-                            <div class="sizes">
-                                <input type="radio" value="s" name="size" id="size"> S 
-                            </div>
-                            <div class="sizes">
-                                <input type="radio" value="m" name="size" id="size"> M 
-                            </div>
-                            <div class="sizes">
-                                <input type="radio" value="l" name="size" id="size"> L 
-                            </div>
-                            <div class="sizes">
-                            <input type="radio" value="xl" name="size" id="size"> XL 
-                            </div>
+
+                            <% } %>
 
                         </div>
 
@@ -110,12 +102,15 @@
                             <div class="product-count">
 
                                 <label for="count">Cantidad</label>
+
                                 <select name="count">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
+
+                                    <% for (let i = 1; i <= 10; i++) { %>
+
+                                    <option value="<%=i%>"><%=i%></option>
+                                    
+                                    <% } %>
+
                                 </select>
 
                             </div>
@@ -124,10 +119,13 @@
 
                                 <label for="color">Color</label>
                                 <select name="color">
-                                    <option value="AZ">Azul</option>
-                                    <option value="RS">Rosa</option>
-                                    <option value="VR">Verde</option>
-                                    <option value="RJ">Rojo</option>
+
+                                    <% for (let i = 0; i < producto.color.length; i++) { %>
+
+                                    <option value="<%=producto.color[i]%>"><%=producto.color[i]%></option>
+
+                                    <% } %>
+
                                 </select>
 
                             </div>

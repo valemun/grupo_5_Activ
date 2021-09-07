@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <%- include( "../partials/head" ) %>
+    <link href="/css/productListStyle.css" rel="stylesheet"/>
+    
 </head>
 <body>
+
+    <%- include( "../partials/header" ) %>
+
+    <main>
+
+        <div class="product-category">
+            <h1>Mujeres</h1>
+        </div>
+
+        <section id="productos-parecidos">
+
+            <% for (let i = 0; i < productos.length; i++) { %>
+
+            <article class="producto-parecido">
+                
+                <a href="/products/<%=productos[i].id%>">
+                <div class="foto-parecido">
+                    <img src="<%=productos[i].thumbnail%>" alt="<%=productos[i].alt%>">
+                </div>
+                <p class="titulo-producto"><%=productos[i].nombre%></p>
+                <p class="descripcion-producto"><%=productos[i].desc%></p>
+                <p class="precio-producto">$<%=productos[i].precio%></p>
+                </a>
+            
+            </article>
+
+            <% } %>
+            
+        </section>
+        
+    </main>
+
+    <%- include( "../partials/footer" ) %>
     
 </body>
 </html>

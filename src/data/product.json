@@ -2,33 +2,54 @@
     {
         "id": 1,
         "nombre": "Leggins Activ X",
-        "desc": "Descripción",
+        "desc": "Leggins de material duradero y cómodos",
         "precio": "199.80",
         "thumbnail": "/images/product-placeholder.jpg",
-        "alt": "producto"
+        "breadcrumb": ["Mujeres", "Bottoms"],
+        "mainPic": "/images/product-leggins.jpg",
+        "sidePic": "/images/product-leggins.jpg",
+        "alt": "producto",
+        "tamano": ["XS", "S", "M", "L", "XL"],
+        "color": ["Azul", "Rosa", "Verde", "Rojo"]
+
     },
     {
         "id": 2,
         "nombre": "Pants Activ",
-        "desc": "Descripción",
+        "desc": "Pants de material duradero y cómodos",
         "precio": "450.00",
         "thumbnail": "/images/product-placeholder.jpg",
-        "alt": "producto"
+        "breadcrumb": ["Mujeres", "Bottoms"],
+        "mainPic": "/images/product-leggins.jpg",
+        "sidePic": "/images/product-leggins.jpg",
+        "alt": "producto",
+        "tamano": ["XS", "S", "M", "L", "XL"],
+        "color": ["Negro", "Azul", "Rojo"]
     },
     {
         "id": 3,
         "nombre": "Sports Bra X",
-        "desc": "Descripción",
+        "desc": "Sports Bra de material duradero y cómodo",
         "precio": "339.50",
         "thumbnail": "/images/product-placeholder.jpg",
-        "alt": "producto"
+        "breadcrumb": ["Mujeres", "Tops"],
+        "mainPic": "/images/product-leggins.jpg",
+        "sidePic": "/images/product-leggins.jpg",
+        "alt": "producto",
+        "tamano": ["XS", "S", "M", "L", "XL"],
+        "color": ["Naranja", "Rosa", "Negro", "Morado"]
     },
     {
         "id": 4,
         "nombre": "Bandas Activ",
-        "desc": "Descripción",
+        "desc": "Bandas de material duradero y cómodas",
         "precio": "500.10",
         "thumbnail": "/images/product-placeholder.jpg",
-        "alt": "producto"
+        "breadcrumb": ["Mujeres", "Accesorios"],
+        "mainPic": "/images/product-leggins.jpg",
+        "sidePic": "/images/product-leggins.jpg",
+        "alt": "producto",
+        "tamano": ["XS", "S", "M", "L", "XL"],
+        "color": ["Azul", "Rosa", "Verde", "Negro", "Amarillo"]
     }
 ]

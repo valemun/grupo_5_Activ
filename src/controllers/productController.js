@@ -5,7 +5,7 @@ let reviews = require( "../data/reviews.json" );
 
 const controller = {
     list: (req, res) => {
-        res.render( "products/productList" );
+        res.render( "products/productList", {"productos":productos} );
     },
     detail: (req, res) => {
 
