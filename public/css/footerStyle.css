@@ -71,6 +71,8 @@ footer i {
 #footer-promociones button {
     background-color: var(--white);
     border-radius: 10px;
+    border-color: var(--white);
+    border-style: solid;
     padding: 0;
     position: absolute;
     right: 7px;

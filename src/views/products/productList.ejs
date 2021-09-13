@@ -12,18 +12,18 @@
 
     <main>
 
-        <div class="product-category">
+        <div class="categoria-titulo">
             <h1>Mujeres</h1>
         </div>
 
-        <section id="productos-parecidos">
+        <section id="productos">
 
             <% for (let i = 0; i < productos.length; i++) { %>
 
-            <article class="producto-parecido">
+            <article class="producto">
                 
                 <a href="/products/<%=productos[i].id%>">
-                <div class="foto-parecido">
+                <div class="foto-producto">
                     <img src="<%=productos[i].thumbnail%>" alt="<%=productos[i].alt%>">
                 </div>
                 <p class="titulo-producto"><%=productos[i].nombre%></p>

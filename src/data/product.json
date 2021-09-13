@@ -51,5 +51,19 @@
         "alt": "producto",
         "tamano": ["XS", "S", "M", "L", "XL"],
         "color": ["Azul", "Rosa", "Verde", "Negro", "Amarillo"]
+    },
+    {
+        "id": 5,
+        "nombre": "Bandas Activ",
+        "desc": "Bandas de material duradero y cómodas",
+        "precio": "500.10",
+        "thumbnail": "/images/product-placeholder.jpg",
+        "breadcrumb": ["Mujeres", "Accesorios"],
+        "mainPic": "/images/product-leggins.jpg",
+        "sidePic": "/images/product-leggins.jpg",
+        "alt": "producto",
+        "tamano": ["XS", "S", "M", "L", "XL"],
+        "color": ["Azul", "Rosa", "Verde", "Negro", "Amarillo"]
     }
+    
 ]

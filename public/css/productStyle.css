@@ -249,7 +249,7 @@ h2 {
 .producto-parecido {
     margin-bottom: 30px;
     text-align: center;
-    width: 45%;
+    width: 23%;
 }
 
 .producto-parecido a:hover {
@@ -546,11 +546,12 @@ p.review-user{
     /* Parecidos */
 
     #productos-parecidos {
-        justify-content: space-evenly;
+        justify-content: center;
     }
 
     .producto-parecido {
         width: 20%;
+        margin: 0 10px 0;
     }
 
 }

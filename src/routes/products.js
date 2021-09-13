@@ -5,7 +5,7 @@ const productController = require( "../controllers/productController" );
 
 router.get( "/list/:categoria", productController.list );
 router.get( "/:id", productController.detail );
-router.get( "/:id/edit", productController.create );
-router.get( "/create", productController.edit );
+router.get( "/:id/edit", productController.edit );
+router.get( "/add/new", productController.create );
 
 module.exports = router;
