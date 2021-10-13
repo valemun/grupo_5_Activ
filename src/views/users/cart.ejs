@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <%- include( "../partials/head" ) %>
+    <link href="/css/productListStyle.css" rel="stylesheet"/>
+    
+</head>
+<body>
+
+    <%- include( "../partials/header" ) %>
+
+    <main>
+
+        <div class="pagina-titulo">
+            <h1>Mi carrito</h1>
+            <p>Total: 3 Producto(s)</p>
+        </div>
+
+        <section class="carrito">
+            <article class="item-carrito">
+                <img width="100px" src="/images/product-placeholder.jpg">
+                <h3>Leggins Activ x</h3>
+                <p>$450.00</p>
+                <p>Color: Azul</p>
+                <p>Talla: M</p>
+                <p><i class="fas fa-heart"></i> <i class="fas fa-trash"></i></p>
+                <select name="cantidad">
+
+                    <% for (let i = 1; i <= 10; i++) { %>
+
+                    <option value="<%=i%>"><%=i%></option>
+                    
+                    <% } %>
+
+                </select>
+                <hr>
+            </article>
+
+            <div class="subtotal">
+                <p>SUB-TOTAL: $1350.00</p>
+            </div>
+
+        </section>
+
+        <section class="total-box">
+
+            <div>
+                <p>TOTAL: $1600</p>
+                <p>SUB-TOTAL: $1350</p>
+                <p>ENTREGA: $150</p>
+
+                <button>Finalizar compra</button>
+
+                <p><a href=""><i class="fas fa-credit-card"></i>  Métodos de pago</a></p>
+            </div>
+
+        </section>
+
+        <aside class="delivery-details">
+
+            <p>Envíos gratuitos en compras superiores a $999.</p>
+            <p>Los envíos tardan usualmente de una a dos semanas. 
+            Las entregas pueden presentar un retraso. 
+            Puedes consultar el estatus de tu pedido aquí.
+            </p>
+            <p>Envíos y devoluciones gratis para miembros de Activ.</p>
+
+        </aside>
+
+        <section id="productos-parecidos">
+
+            <h2>Articulos parecidos</h2>
+
+            <% for (let i = 0; i < 4; i++) { %>
+
+            <article class="producto-parecido">
+                
+                <a href="/products/<%=productos[i].id%>">
+                <div class="foto-parecido">
+                    <img src="<%=productos[i].thumbnail%>" alt="<%=productos[i].alt%>">
+                </div>
+                <p class="titulo-producto"><%=productos[i].nombre%></p>
+                <p class="descripcion-producto"><%=productos[i].desc%></p>
+                <p class="precio-producto">$<%=productos[i].precio%></p>
+                </a>
+            
+            </article>
+
+            <% } %>
+            
+        </section>
+        
+    </main>
+
+    <%- include( "../partials/footer" ) %>
+    
+</body>
+</html>

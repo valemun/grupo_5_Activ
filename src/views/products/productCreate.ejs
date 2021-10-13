@@ -15,6 +15,70 @@
         <div class="pagina-titulo">
             <h1>Producto Nuevo</h1>
         </div>
+
+        <div class="form-new">
+            
+            <form action="/create" method="POST">
+
+                <div>
+                    <label for="nombre">Nombre: </label>
+                    <input type="text" name="Nombre">
+                </div>
+                <div>
+                    <label for="precio">Precio: </label>
+                    <input type="number" name="precio">
+                </div>
+                <div>
+                    <label for="desc">Descripción: </label>
+                    <textarea name="desc" maxlength="40"></textarea>
+                </div>
+                <div>
+                    <label for="categoria">Categoría: </label>
+                    <select name="categoria">
+                        <option>Hombre</option>
+                        <option>Mujer</option>
+                        <option>Unisex</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="tipo">Tipo: </label>
+                    <select name="tipo">
+                        <option>Tenis</option>
+                        <option>Ropa</option>
+                        <option>Accesorio</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="talla">Tallas: </label>
+                        <input type="checkbox" value="XS" name="talla">XS
+                        <input type="checkbox" value="S" name="talla">S
+                        <input type="checkbox" value="M" name="talla">M
+                        <input type="checkbox" value="L" name="talla">L
+                        <input type="checkbox" value="XL" name="talla">XL
+                </div>
+                <div>
+                    <label for="color">Colores: </label>
+                        <input type="checkbox" value="Azul" name="color">Azul
+                        <input type="checkbox" value="Verde" name="color">Verde
+                        <input type="checkbox" value="Amarillo" name="color">Amarillo
+                        <input type="checkbox" value="Naranja" name="color">Naranja
+                        <input type="checkbox" value="Rosa" name="color">Rosa
+                        <input type="checkbox" value="Rojo" name="color">Rojo
+                        <input type="checkbox" value="Morado" name="color">Morado
+                        <input type="checkbox" value="Negro" name="color">Negro
+                </div>
+                <div>
+                    <label for="mainPic">Imagen: </label>
+                    <input type="file" accept="image/*" name="mainPic">
+                </div>
+                <div>
+                    <label for="thumbnail">Thumbnail: </label>
+                    <input type="file" accept="image/*" name="thumbnail">
+                </div>
+
+            </form>
+
+        </div>
         
     </main>
 
