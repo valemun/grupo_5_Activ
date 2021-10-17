@@ -56,3 +56,30 @@
 <ul>
     <li>Evitar dejar para la última semana la organización del sprint.</li>
 </ul>
+
+<h2>Sprint 3</h2>
+
+<h3>Comenzar a hacer:</h3>
+<ul>
+    <li>Trabajar todos los días</li>
+</ul>
+
+<h3>Hacer más:</h3>
+  <ul>  
+    <li>Hacer una lista de prioridades</li>
+</ul>
+
+<h3>Continuar haciendo:</h3>
+<ul>
+  <li>Seguir actualizando el tablero según se vayan completando las actividades.</li>
+</ul>
+
+<h3>Hacer menos:</h3>
+<ul>
+    <li>Dejar de prolongar actividades más allá del tiempo comprometido.</li>
+</ul>
+
+<h3>Dejar de hacer:</h3>
+<ul>
+    <li>Evitar dejar elementos importantes para el final.</li>
+</ul>
