@@ -3,7 +3,7 @@
 <head>
 
     <%- include( "../partials/head" ) %>
-    <link href="/css/productListStyle.css" rel="stylesheet"/>
+    <link href="/css/cartStyle.css" rel="stylesheet"/>
     
 </head>
 <body>
@@ -14,59 +14,95 @@
 
         <div class="pagina-titulo">
             <h1>Mi carrito</h1>
-            <p>Total: 3 Producto(s)</p>
+            <p>Total: 2 Producto(s)</p>
         </div>
 
+        <div class="compra-box">
         <section class="carrito">
             <article class="item-carrito">
-                <img width="100px" src="/images/product-placeholder.jpg">
-                <h3>Leggins Activ x</h3>
-                <p>$450.00</p>
-                <p>Color: Azul</p>
-                <p>Talla: M</p>
-                <p><i class="fas fa-heart"></i> <i class="fas fa-trash"></i></p>
-                <select name="cantidad">
+                <div class="datos">
+                    <div class="product-img">
+                        <img src="/images/product-placeholder.jpg">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="nombre">Leggins Activ x</h3>
+                        <p class="precio">$450.00</p>
+                        <p class="color">Color: Azul</p>
+                        <p class="talla">Talla: M</p>
+                    </div>
+                    <div class="product-count">
+                    <p class="iconos"><i class="fas fa-heart"></i> <i class="fas fa-trash"></i></p>
+                    <select name="cantidad" >
 
-                    <% for (let i = 1; i <= 10; i++) { %>
+                        <% for (let i = 1; i <= 10; i++) { %>
 
-                    <option value="<%=i%>"><%=i%></option>
-                    
-                    <% } %>
+                        <option value="<%=i%>" <% if (i == 4) { %> selected <% } %> ><%=i%></option>
+                        
+                        <% } %>
 
-                </select>
+                    </select>
+                    </div>
+                </div>
+                <hr>
+            </article>
+            <article class="item-carrito">
+                <div class="datos">
+                    <div class="product-img">
+                        <img src="/images/product-placeholder.jpg">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="nombre">Leggins Activ x</h3>
+                        <p class="precio">$450.00</p>
+                        <p class="color">Color: Azul</p>
+                        <p class="talla">Talla: M</p>
+                    </div>
+                    <div class="product-count">
+                    <p class="iconos"><i class="fas fa-heart"></i> <i class="fas fa-trash"></i></p>
+                    <select name="cantidad" >
+
+                        <% for (let i = 1; i <= 10; i++) { %>
+
+                        <option value="<%=i%>" <% if (i == 4) { %> selected <% } %> ><%=i%></option>
+                        
+                        <% } %>
+
+                    </select>
+                    </div>
+                </div>
                 <hr>
             </article>
 
             <div class="subtotal">
-                <p>SUB-TOTAL: $1350.00</p>
+                <p>SUB-TOTAL: <span class="bold">$1350.00</span></p>
             </div>
 
         </section>
 
-        <section class="total-box">
+        <section class="finalizar-box">
 
-            <div>
-                <p>TOTAL: $1600</p>
-                <p>SUB-TOTAL: $1350</p>
-                <p>ENTREGA: $150</p>
+            <div class="total-box">
+                <p class="bold">TOTAL: $1600</p>
+                <p class="small">SUB-TOTAL: <span class="bold">$1350</span></p>
+                <p class="small">ENTREGA: <span class="bold">$150</span></p>
 
                 <button>Finalizar compra</button>
 
-                <p><a href=""><i class="fas fa-credit-card"></i>  Métodos de pago</a></p>
+                <p class="metodos-pago"><a href=""><i class="fas fa-credit-card"></i>  Métodos de pago</a></p>
             </div>
 
+            <aside class="delivery-details">
+
+                <p>Envíos gratuitos en compras superiores a $999.</p>
+                <p>Los envíos tardan usualmente de una a dos semanas. 
+                Las entregas pueden presentar un retraso. 
+                Puedes consultar el estatus de tu pedido aquí.
+                </p>
+                <p>Envíos y devoluciones gratis para miembros de Activ.</p>
+    
+            </aside>
+
         </section>
-
-        <aside class="delivery-details">
-
-            <p>Envíos gratuitos en compras superiores a $999.</p>
-            <p>Los envíos tardan usualmente de una a dos semanas. 
-            Las entregas pueden presentar un retraso. 
-            Puedes consultar el estatus de tu pedido aquí.
-            </p>
-            <p>Envíos y devoluciones gratis para miembros de Activ.</p>
-
-        </aside>
+        </div>
 
         <section id="productos-parecidos">
 

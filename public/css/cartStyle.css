@@ -1,0 +1,263 @@
+:root {
+    --blue: #6633FF;
+    --darkblue: #4926b4;
+    --darkgray: #191919;
+    --lightgray: #DDE0E8;
+    --white: #FFF;
+    --orange: #FF8D27;
+    --darkorange: #d16201;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap');
+
+
+* ​{    
+    box-sizing: ​border-box​;
+    margin: ​0​px​;    
+    padding: ​0​px​;    
+}
+
+body {
+    background-color: var(--white);
+    color: var(--darkgray);
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    margin: unset;
+}
+
+/* Titulos */
+
+.pagina-titulo{
+    padding-left: 25px;
+}
+
+.pagina-titulo h1{
+    display: inline-block;
+    font-size: 24px;
+    margin:0px;
+    margin-top: 10px;
+    padding: 0;
+    padding-top: 20px;
+}
+
+.pagina-titulo p{
+    margin-top: 0px;
+}
+
+/* Carrito */
+
+.carrito {
+    width: 90%;
+    padding-left: 25px;
+    padding-right: 20px;
+}
+
+.item-carrito .datos {
+    display: flex;
+}
+
+.item-carrito img {
+    width: 100px;
+}
+
+.product-info {
+    width: 60%;
+    padding-left: 10%;
+}
+
+.product-info h3 {
+    margin: 0;
+}
+
+.product-info p{
+    margin: 0;
+}
+
+.product-count p {
+    margin-bottom: 90%;
+}
+/* Subtotal */
+.subtotal {
+    text-align: right;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+/* Total */
+.total-box{
+    margin-left: 15%;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    width: 60%;
+    padding: 10px 30px;
+    background-color: var(--lightgray);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.total-box .metodos-pago i {
+    margin-right: 5px;
+    color: var(--darkblue);
+}
+
+.total-box .metodos-pago:hover i {
+    color: var(--darkblue);
+}
+
+.total-box .metodos-pago {
+    font-size: 12px;
+}
+
+.total-box .metodos-pago:hover p {
+    color: var(--orange);
+}
+
+.total-box .small{
+    font-size: 12px;
+}
+
+.total-box button {
+    background-color: var(--blue);
+    border-radius: 20px;
+    border: none;
+    color:var(--white);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 10px;
+    padding: 5px 25px;
+    transition: background-color 0.3s;
+}
+
+.total-box button:hover {
+    background-color: var(--orange);
+}
+
+/* Aside */
+aside {
+    padding: 0px 25px;
+    font-size: 14px;
+}
+
+/* Articulos parecidos */
+
+#productos-parecidos {
+    font-size: 14px;
+    padding: 0px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#productos-parecidos h2 {
+    width: 100%;
+}
+
+.producto-parecido {
+    margin-bottom: 30px;
+    text-align: center;
+    width: 23%;
+}
+
+.producto-parecido a:hover {
+    color: var(--darkgray);
+}
+
+.foto-parecido{
+    margin: 1px 1px;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+}
+
+#productos-parecidos img {
+    transition: transform 0.5s;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.foto-parecido:hover > img {
+    transform: scale(1.1);
+    vertical-align: middle;
+}
+
+.producto-parecido p {
+    margin: 0;
+}
+
+.producto-parecido .titulo-producto {
+  font-weight: 500;  
+}
+
+.producto-parecido .precio-producto {
+    font-weight: 600;  
+  }
+
+
+@media (min-width: 720px) {
+
+    .compra-box{
+        display: flex;
+    }
+    
+    .pagina-titulo{
+        padding-left: 30px;
+    }
+
+    .finalizar-box{
+        width: 40%;
+    }
+
+    .carrito {
+        width: 60%;
+        padding-left: 30px;
+        padding-right: 20px;
+        display: block;
+    }
+
+    .total-box{
+        margin-left: 0px;
+        margin-top: 0px;
+        margin-bottom: 20px;
+        width: 80%;
+        display: block;
+        margin-left: 0%;
+        padding: 10px 20px;
+    }
+
+    .aside{
+        padding-left: 0px;
+    }
+
+}
+
+@media (min-width: 890px) { 
+
+    .pagina-titulo{
+        padding-left: 50px;
+    }
+
+    .carrito {
+        padding-left: 50px;
+    }
+
+    /* Parecidos */
+
+    .producto-parecido {
+        width: 20%;
+    }
+
+    #productos-parecidos {
+        padding: 0px 40px;
+    }
+
+    h2 {
+        text-align: left;
+        padding: 0px 30px;
+        width: 100%;
+    }
+
+}
+    

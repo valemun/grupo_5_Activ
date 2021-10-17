@@ -30,7 +30,7 @@
 
             <div class="product-info mobile flex-items">
 
-                <h1 class="titulo-producto"><%=producto.nombre%></h1>
+                <h1 class="titulo-producto"><%=producto.nombre%> <a href="/products/<%=producto.id%>/edit"><i class="fas fa-pen"></i></a></h1>
                 <p class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></p>
                 <p class="precio-producto">$<%=producto.precio%></p>
                 <p class="descripcion-producto"><%=producto.desc%></p>
@@ -67,7 +67,7 @@
                 
                 <div class="product-info desktop">
 
-                    <h1 class="titulo-producto"><%=producto.nombre%></h1>
+                    <h1 class="titulo-producto"><%=producto.nombre%> <a href="/products/<%=producto.id%>/edit"><i class="fas fa-pen"></i></a></h1>
                     <p class="star-rating">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>

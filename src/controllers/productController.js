@@ -21,7 +21,7 @@ const controller = {
         res.render( "products/productCreate" );
     },
     edit: (req, res) => {
-        res.render( "products/productEdit" );
+        res.render( "products/productCreate" );
     }
 }
 
