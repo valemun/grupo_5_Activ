@@ -3,9 +3,15 @@ const router = express.Router();
 
 const userController = require( "../controllers/userController" );
 
-router.get( "/", userController.profile );
+/* Carrito */
 router.get( "/cart", userController.cart );
+
+/* Sign in y sign up */
 router.get( "/login", userController.login );
 router.get( "/register", userController.register );
+
+/* Perfil de usuario */
+router.get( "/:id", userController.profile );
+
 
 module.exports = router;

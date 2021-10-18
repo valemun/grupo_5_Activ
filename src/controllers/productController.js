@@ -4,9 +4,19 @@ let reviews = require( "../data/reviews.json" );
 
 
 const controller = {
+
     list: (req, res) => {
         res.render( "products/productList", {"productos":productos} );
     },
+
+    new: (req, res) => {
+        res.render( "products/productCreate" );
+    },
+
+    create: (req, res) => {
+        res.render( "products/productCreate" );
+    },
+
     detail: (req, res) => {
 
         let id = req.params.id;
@@ -17,10 +27,16 @@ const controller = {
 
         res.render( "products/productDetail",  {"producto":producto, "productos":productos, "review":reviews} );
     },
-    create: (req, res) => {
+
+    edit: (req, res) => {
         res.render( "products/productCreate" );
     },
-    edit: (req, res) => {
+
+    update: (req, res) => {
+        res.render( "products/productCreate" );
+    },
+    
+    delete: (req, res) => {
         res.render( "products/productCreate" );
     }
 }
