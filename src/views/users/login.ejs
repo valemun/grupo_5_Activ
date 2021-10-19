@@ -14,55 +14,60 @@
 
         <section class="caja-main">
         <div class="caja-inicio">
-            <h2>INICIAR SESIÓN</h2>
+            <h2>Iniciar Sesión</h2>
 
             <form action="/login" method="POST">
-                <p>
-                    <label for="Correo">Correo electrónico:</label><br>
-                    <input type="email" name="Correo">&nbsp;&nbsp;<i class="fas fa-envelope"></i>
+                <p class="field">
+                    <label for="correo">Correo electrónico:</label><br>
+                    <input type="email" name="correo" class="input-text"><i class="fas fa-envelope"></i>
                 </p>
-                <p>
-                    <label for="Contraseña">Contraseña:</label><br>
-                    <input type="password" name="Contraseña">&nbsp;&nbsp;<i class="fas fa-eye-slash"></i>
+                <p class="field">
+                    <label for="contra">Contraseña:</label><br>
+                    <input type="password" name="contra" class="input-text contrasena"><i class="fas fa-eye-slash"></i>
                 </p>
 
-                <p class="pequeño"><a href="/login">¿Olvidaste tu contraseña?</a></p>
+                <p class="pequeño corrido olvidaste"><a href="">¿Olvidaste tu contraseña?</a></p>
                 
-                <p class="pequeño">
-                    <input type="checkbox" name="recorder" value="Recordarme" checked>
-                    <label for="recorder">Recordarme &nbsp;&nbsp;&nbsp;</label>
-                    <button type="submit">&nbsp;Iniciar sesión&nbsp;</button>
-                </p>
+                <div class="recordarme pequeño corrido">
+                    <input type="checkbox" name="recordar" value="true"> Recordarme
+                </div>
+
+
+                <div>
+                    <button type="submit" class="button-especial">Iniciar sesión</button>
+                </div>
+
             </form>
 
-            <p class="centrado">Iniciar sesión con</p>
-            <div>
-                <button type="button">&nbsp;Facebook&nbsp;</button> <i class="fab fa-facebook-square"></i> &nbsp;&nbsp;&nbsp;
-                <button type="button">&nbsp;Google&nbsp;</button> <i class="fab fa-google-plus-square"></i>
+            <p>Iniciar sesión con:</p>
+            <div class="sesion-redes">
+                <a href=""> <button> <i class="fab fa-facebook-square"></i> Facebook  </button> </a>
+                <a href=""> <button> <i class="fab fa-google-plus-square"></i> Google </button> </a>
+            </div>
+
+            <div class="ayuda">
+                <p class="upper">
+                    <a href="">¡Ayuda! <i class="fas fa-question-circle"></i></a>
+                </p>
             </div>
         </div>
-        <br>
-        <div id="slideshow-text">
 
-            <p class="upper">
-                ¡Ayuda!&nbsp;&nbsp;&nbsp;<i class="fas fa-question-circle"></i>
-            </p>
-
-        </div>
+        
 
         <div class="caja-right">
             
             <p class="titulo">
-                ¿No estás registrado?<br>
+                ¿No estás registrado?
+            </p>
+            <p class="subtitulo">
                 Únete a nuestra comunidad y disfruta de los beneficios
             </p>
-                <ul class="lista-centro">
+                <ul>
                     <li>Notificaciones personalizadas</li>
                     <li>Seguimiento de tu pedido</li>
                     <li>Acceso a promociones</li>
                 </ul>
-            <br>
-            <button type="button">&nbsp;Unirse ahora&nbsp;</button>
+            <a href="/user/register/"><button class="button-especial" type="button">Unirme ahora</button></a>
         </div>
         </section>
 
@@ -74,8 +79,8 @@
             </div>
 
             <div id="slideshow-text">
-                <p>Suscríbete y entérate de todas las promociones que tenemos especialmente para ti</p>
-                <button>&nbsp;&nbsp;Suscribete&nbsp;&nbsp;</button>
+                <p>Suscríbete y entérate de todas las promociones</p>
+                <a href="/user/register/"><button class="button-especial" >Suscribirme</button></a>
             </div>
 
         </div>
@@ -86,25 +91,24 @@
 
                 <p>Si ya eres USUARIO registrado</p>
                 <form action="/login" method="POST">
-                    <p>
+                    <p class="field">
                         <label for="Pedido">Número de pedido:</label><br>
-                        <input type="text" name="Pedido">&nbsp;&nbsp;<i class="fas fa-box"></i>
+                        <input type="text" class="input-text" name="Pedido"><i class="fas fa-box"></i>
                     </p>
-                    <p>
+                    <p class="field">
                         <label for="Correo">Correo:</label><br>
-                        <input type="email" name="Correo">&nbsp;&nbsp;<i class="fas fa-envelope-open-text"></i>
+                        <input type="email" class="input-text" name="Correo"><i class="fas fa-envelope-open-text"></i>
                     </p>
-                    <p>
+                    <p class="field">
                         <label for="Postal">Código Postal:</label><br>
-                        <input type="text" name="Postal">&nbsp;&nbsp;<i class="fas fa-home"></i>
+                        <input type="text" class="input-text" name="Postal"><i class="fas fa-home"></i>
                     </p>
-                    <br>
                     <p class="pequeño">
-                        <input type="checkbox" name="message" value="Enviar" checked>
-                        <label for="message">Enviar ubicación &nbsp;&nbsp;&nbsp;</label>
-                        <br><br>
-                        <button type="submit">&nbsp;Verificar status&nbsp;</button>
+                        <input type="checkbox" name="message" value="Enviar" checked> Enviar ubicación
                     </p>
+                    <div class="">
+                        <button type="submit">Verificar status</button>
+                    </div>
                 </form>
     
             </div>

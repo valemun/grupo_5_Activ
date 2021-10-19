@@ -165,4 +165,11 @@ main {
     }
 
 }
+
+@media (min-width: 890px) { 
+    header nav ul li {
+        font-size: 16px;
+        padding: 3.5px 15px;
+    }
+}
     

@@ -11,84 +11,78 @@
 
     <main>
 
-        <section class="caja-main-bottom">
-
-            <div class="caja-img">
-                
-                <div id="slideshow-container">
-
-                    <div>
-                        <img src="/images/chica.jpg" alt="jumper">
-                    </div>
-        
-                </div>
-            </div>
+        <section class="caja-main">
 
             <div class="caja-registro">
                 <h2>Regístrate</h2>
 
-                <p>¿Aún no eres miembro?</p>
-                <form action="/login" method="POST">
-                    <p>
-                        <label for="Nombre">Nombre:</label><br>
-                        <input type="text" name="Nombre">&nbsp;&nbsp;<i class="fas fa-user"></i>
+                <p class="subtitulo">¿Aún no eres miembro?</p>
+
+                <form action="/register" method="POST">
+                    <p class="field">
+                        <label for="nombre">Nombre:</label>
+                        <input class="input-text" type="text" name="nombre">
                     </p>
-                    <p>
-                        <label for="Apellido">Apellido:</label><br>
-                        <input type="text" name="Apellido">
+                    <p class="field">
+                        <label for="apellido">Apellido:</label>
+                        <input class="input-text" type="text" name="apellido">
                     </p>
-                    <p>
-                        <label for="Correo">Correo:</label><br>
-                        <input type="email" name="Correo">&nbsp;&nbsp;<i class="fas fa-at"></i>
+                    <p class="field">
+                        <label for="correo">Correo:</label>
+                        <input class="input-text" type="email" name="correo">
                     </p>
-                    <p>
-                        <label for="Confirmar correo">Confirmar correo:</label><br>
-                        <input type="email" name="Confirmar correo">
+                    <p class="field">
+                        <label for="conficorreo">Confirmar correo:</label>
+                        <input class="input-text" type="email" name="conficorreo">
                     </p>
-                    <p>
-                        <label for="Contraseña">Contraseña:</label><br>
-                        <input type="password" name="Contraseña">&nbsp;&nbsp;<i class="fas fa-key"></i>
+                    <p class="field">
+                        <label for="contra">Contraseña:</label>
+                        <input class="input-text" type="password" name="contra">
                     </p>
-                    <p>
-                        <label for="Confirmar contraseña">Confirmar contraseña:</label><br>
-                        <input type="password" name="Confirmar contraseña">
+                    <p class="field">
+                        <label for="conficontra">Confirmar contraseña:</label>
+                        <input class="input-text" type="password" name="conficontra">
+                    </p>
+                    <p class="field">
+                        <label for="imagen">Foto de perfil:</label>
+                        <input type="file" accept="image/*" name="imagen">
                     </p>
                     
                     <p class="pequeño">
-                        <input type="checkbox" name="aceptance" value="Acepto" checked>
-                        <label for="aceptance">Acepto Términos y Condiciones &nbsp;&nbsp;&nbsp;</label>
-                        <br><br>
-                        <button type="submit">&nbsp;Crear cuenta&nbsp;</button>
+                        <input type="checkbox" name="terminos" value="true"> Acepto Términos y Condiciones
                     </p>
+
+                    <button class="button-especial" type="submit">Crear cuenta</button>
+
                 </form>
-                <br>
 
-            </div>
-        </section>
-
-
-        <section class="caja-main-top">
-            <div class="leyenda1">
-                <p class="tipo">SERVICIO AL CLIENTE:</p><br>
-                <p class="tipo">Devoluciones&nbsp;&nbsp;<i class="fas fa-exchange-alt"></i></p>
-                <p class="tipo">Entregas&nbsp;&nbsp;<i class="fas fa-truck"></i></p>
-                <p class="tipo">Pagos&nbsp;&nbsp;<i class="far fa-credit-card"></i></p>
-                <p class="tipo">Canales&nbsp;&nbsp;<i class="fas fa-comments"></i></p>
-                <p class="tipo">Ayuda&nbsp;&nbsp;<i class="fas fa-info-circle"></i></p>
-            </div>
-
-            <div class="leyenda2">
-                <p class="centrado">Crea tu cuenta con</p>
-                <div>
-                    <button type="button">&nbsp;Facebook&nbsp;</button> <i class="fab fa-facebook-square"></i> &nbsp;&nbsp;&nbsp;
-                    <button type="button">&nbsp;Google&nbsp;</button> <i class="fab fa-google-plus-square"></i>
+                <p>Iniciar sesión con:</p>
+                <div class="sesion-redes">
+                    <a href=""> <button> <i class="fab fa-facebook-square"></i> Facebook  </button> </a>
+                    <a href=""> <button> <i class="fab fa-google-plus-square"></i> Google </button> </a>
                 </div>
-                <br>
-                <p class="tipo1">Puedes cancelar tu suscripción en cualquier momento</p>
-                <p class="tipo1">Al registrar una cuenta aceptas que has leído y que entendiste Términos y Condiciones y das tu consentimiento expreso para cada tipo de transacción que requiera para el procesamiento de sus datos personales bajo la la Política de Privacidad</p>
+
+
+            </div>
+
+            <div class="disclaimer pequeño">
+                <p class="pequeño">Puedes cancelar tu suscripción en cualquier momento</p>
+                <p class="pequeño">Al registrar una cuenta aceptas que has leído y que entendiste Términos y Condiciones y das tu consentimiento expreso para cada tipo de transacción que se requiera para el procesamiento de sus datos personales bajo la Política de Privacidad</p>
             </div>
 
         </section>
+
+        <div class="caja-img">
+                
+            <div id="slideshow-container">
+
+                <div id="slideshow-img">
+                    <img src="/images/hombremujer.jpg" alt="jumper">
+                </div>
+    
+            </div>
+        </div>
+
         
     </main>
 
