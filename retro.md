@@ -83,3 +83,30 @@
 <ul>
     <li>Evitar dejar elementos importantes para el final.</li>
 </ul>
+
+<h2>Sprint 4</h2>
+
+<h3>Comenzar a hacer:</h3>
+<ul>
+    <li>Poner metas más concretas</li>
+</ul>
+
+<h3>Hacer más:</h3>
+  <ul>  
+    <li>Jerarquizar la importancia de tareas</li>
+</ul>
+
+<h3>Continuar haciendo:</h3>
+<ul>
+  <li>Seguir actualizando el tablero según se vayan completando las actividades.</li>
+</ul>
+
+<h3>Hacer menos:</h3>
+<ul>
+    <li>Preocuparme por cada pequeño detalle</li>
+</ul>
+
+<h3>Dejar de hacer:</h3>
+<ul>
+    <li>Procrastinar el inicio de las actividades</li>
+</ul>
