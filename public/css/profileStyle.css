@@ -1,0 +1,207 @@
+:root {
+    --blue: #6633FF;
+    --darkblue: #4926b4;
+    --darkgray: #191919;
+    --lightgray: #DDE0E8;
+    --white: #FFF;
+    --orange: #FF8D27;
+    --darkorange: #d16201;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap');
+
+
+* ​{    
+    box-sizing: ​border-box​;
+    margin: ​0​px​;    
+    padding: ​0​px​;    
+}
+
+body {
+    background-color: var(--white);
+    color: var(--darkgray);
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    margin: unset;
+}
+
+/* Titulos */
+
+.pagina-titulo{
+    padding-left: 25px;
+}
+
+.pagina-titulo h1{
+    display: inline-block;
+    font-size: 24px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 0;
+    padding-top: 20px;
+}
+
+.pagina-titulo p{
+    margin-top: 0px;
+}
+
+/* Carrito */
+
+.perfil {
+    width: 90%;
+    padding-left: 25px;
+    padding-right: 20px;
+}
+
+.datos {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.user-img img {
+    width: 30vh;
+}
+
+.user-info {
+    padding-left: 20px;
+}
+
+.user-info h3{
+    font-size: 20px;
+    border-bottom: 4px solid var(--orange);
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+.user-info .i-especial{
+    color: var(--blue);
+    padding-left: 10px;
+}
+
+.user-info i:hover{
+    color: var(--darkgray);
+}
+
+.user-info .i-especial:hover{
+    color: var(--orange);
+}
+
+
+.user-edit{
+    align-self: start;
+    justify-self: end;
+}
+
+.user-edit i{
+    color: var(--blue);
+}
+
+.bold {
+    font-weight: 600;
+}
+
+/* Articulos parecidos */
+
+#productos-parecidos {
+    font-size: 14px;
+    padding: 0px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#productos-parecidos h2 {
+    width: 100%;
+}
+
+.producto-parecido {
+    margin-bottom: 30px;
+    text-align: center;
+    width: 23%;
+}
+
+.producto-parecido a:hover {
+    color: var(--darkgray);
+}
+
+.foto-parecido{
+    margin: 1px 1px;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+}
+
+#productos-parecidos img {
+    transition: transform 0.5s;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.foto-parecido:hover > img {
+    transform: scale(1.1);
+    vertical-align: middle;
+}
+
+.producto-parecido p {
+    margin: 0;
+}
+
+.producto-parecido .titulo-producto {
+  font-weight: 500;  
+}
+
+.producto-parecido .precio-producto {
+    font-weight: 600;  
+  }
+
+
+@media (min-width: 720px) {
+    .pagina-titulo{
+        padding-left: 30px;
+    }
+
+    .perfil{
+        padding-left: 30px;
+    }
+
+    .user-info {
+        padding-left: 30px;
+    }
+}
+
+@media (min-width: 890px) { 
+
+    .pagina-titulo{
+        padding-left: 70px;
+    }
+
+    .perfil{
+        padding-left: 70px;
+    }
+
+    .carrito {
+        padding-left: 70px;
+    }
+
+    .user-info {
+        padding-left: 40px;
+    }
+
+    /* Parecidos */
+
+    .producto-parecido {
+        width: 20%;
+    }
+
+    #productos-parecidos {
+        padding: 0px 40px;
+    }
+
+    h2 {
+        text-align: left;
+        padding: 0px 30px;
+        width: 100%;
+    }
+
+}
+    
