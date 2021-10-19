@@ -18,15 +18,15 @@
 
         <div class="form-new">
             
-            <form action="/create" method="POST">
+            <form action="/products" method="POST">
 
                 <div>
                     <label for="nombre" class="label">Nombre</label>
-                    <input class="input-text" type="text" name="Nombre">
+                    <input class="input-text" type="text" name="nombre">
                 </div>
                 <div>
                     <label for="precio" class="label">Precio</label>
-                    <input class="input-text" type="number" name="precio">
+                    <input class="input-text" type="number" step=".01" name="precio">
                 </div>
                 <div>
                     <label for="desc" class="label">Descripción</label>
@@ -35,38 +35,38 @@
                 <div>
                     <label for="categoria" class="label">Categoría</label>
                     <select name="categoria">
-                        <option>Unisex</option>
-                        <option>Mujer</option>
-                        <option>Hombre</option>
+                        <% for (let i = 0; i < detalles.categorias.length; i++) { %>
+
+                            <option value="<%=detalles.categorias[i]%>"><%=detalles.categorias[i]%></option>
+
+                        <% } %>
                     </select>
                 </div>
                 <div>
                     <label for="tipo" class="label">Tipo: </label>
                     <select name="tipo">
-                        <option>Ropa</option>
-                        <option>Tenis</option>
-                        <option>Accesorio</option>
+                        <% for (let i = 0; i < detalles.tipos.length; i++) { %>
+
+                            <option value="<%=detalles.tipos[i]%>"><%=detalles.tipos[i]%></option>
+
+                        <% } %>
                     </select>
                 </div>
                 <div>
                     <label for="talla" class="label">Tallas</label>
-                        <input type="checkbox" value="XS" name="talla">XS
-                        <input type="checkbox" value="S" name="talla">S
-                        <input type="checkbox" value="M" name="talla">M
-                        <input type="checkbox" value="L" name="talla">L
-                        <input type="checkbox" value="XL" name="talla">XL
+                    <% for (let i = 0; i < detalles.tallas.length; i++) { %>
+
+                        <input type="checkbox" value="<%=detalles.tallas[i]%>" name="talla"><%=detalles.tallas[i]%>
+
+                    <% } %>
                 </div>
                 <div>
                     <label for="color" class="label">Colores</label>
-                        <input type="checkbox" value="Azul" name="color">Azul
-                        <input type="checkbox" value="Verde" name="color">Verde
-                        <input type="checkbox" value="Amarillo" name="color">Amarillo
-                        <input type="checkbox" value="Naranja" name="color">Naranja
-                        <input type="checkbox" value="Rosa" name="color">Rosa
-                        <input type="checkbox" value="Rojo" name="color">Rojo
-                        <input type="checkbox" value="Morado" name="color">Morado
-                        <input type="checkbox" value="Negro" name="color">Negro
-                        <input type="checkbox" value="Blanco" name="color">Blanco
+                    <% for (let i = 0; i < detalles.colores.length; i++) { %>
+
+                        <input type="checkbox" value="<%=detalles.colores[i]%>" name="color"><%=detalles.colores[i]%>
+
+                    <% } %>
                 </div>
                 <div>
                     <label for="mainPic" class="label">Imagen</label>
@@ -75,6 +75,10 @@
                 <div>
                     <label for="thumbnail" class="label">Thumbnail</label>
                     <input type="file" accept="image/*" name="thumbnail">
+                </div>
+                <div>
+                    <label for="alt" class="label">Texto alternativo</label>
+                    <input class="input-text" type="text" name="alt">
                 </div>
                 <div>
                 <button type="submit">Agregar</button>

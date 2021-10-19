@@ -133,6 +133,7 @@ body {
 
 .total-box button:hover {
     background-color: var(--orange);
+    cursor: pointer;
 }
 
 /* Aside */

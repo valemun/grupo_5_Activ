@@ -32,7 +32,7 @@ body {
 }
 
 .pagina-titulo h1{
-    border-bottom: 4px solid var(--blue);
+    border-bottom: 4px solid var(--orange);
     display: inline-block;
     font-size: 24px;
     margin-top: 10px;
@@ -76,10 +76,21 @@ form .label {
 }
 
 .form-new button:hover {
+    background-color: var(--darkblue);
+    cursor: pointer;
+}
+
+.form-new .button-borrar{
     background-color: var(--orange);
 }
 
+.form-new .button-borrar:hover {
+    background-color: var(--darkorange);
+}
+
+
 form .input-text {
+    font-size: 16px;
     border-color: var(--lightgray);
     border-radius: 5px;
     font-family: inherit;
@@ -89,12 +100,17 @@ form .input-text {
 }
 
 form textarea{
+    font-size: 16px;
     border-color: var(--lightgray);
     border-radius: 5px;
     width: 90%;
     height: 50px;
     font-family: inherit;
 }
+
+form .current-img{
+    margin:0;
+    color: var(--darkblue);}
 
 
 @media (min-width: 720px) {

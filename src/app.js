@@ -1,8 +1,9 @@
-//Imortar módulos
+//Importar módulos
 const express = require( "express" );
 const app     = express();
 const path    = require( "path" );
 const publicPath = path.resolve( "public" );
+const methodOverride = require( "method-override" );
 
 //Importar rutas
 const indexRouter = require( "./routes/index" );
@@ -13,6 +14,15 @@ const userRouter = require( "./routes/user" );
 app.use( express.static( publicPath ));
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
+
+//CRUD
+app.use(express.urlencoded( {extended: false} ));
+app.use(express.json());
+//app.use( (req, res, next) => {
+//    res.status(404).render("not-found")
+// });
+app.use(methodOverride("_method"))
+    
 
 //Correr servidor
 app.listen( 3000, () => {

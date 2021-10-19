@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <%- include( "../partials/head" ) %>
+    <link href="/css/productCreateStyle.css" rel="stylesheet"/>
+    
+</head>
+<body>
+
+    <%- include( "../partials/header" ) %>
+
+    <main>
+
+        <div class="pagina-titulo">
+            <h1>Editar Producto</h1>
+        </div>
+
+        <div class="form-new">
+            
+            <form action="/products/<%=producto.id%>?_method=PUT" method="POST">
+
+                <div>
+                    <label for="nombre" class="label">Nombre</label>
+                    <input class="input-text" type="text" name="nombre" value="<%=producto.nombre%>">
+                </div>
+                <div>
+                    <label for="precio" class="label">Precio</label>
+                    <input class="input-text" type="number" step=".01" name="precio" value="<%=producto.precio%>">
+                </div>
+                <div>
+                    <label for="desc" class="label">Descripción</label>
+                    <textarea name="desc" maxlength="40"> <%=producto.desc%> </textarea>
+                </div>
+                <div>
+                    <label for="categoria" class="label">Categoría</label>
+                    <select name="categoria">
+                        <% for (let i = 0; i < detalles.categorias.length; i++) { %>
+
+                            <option value="<%=detalles.categorias[i]%>" <% if(producto.categoria == detalles.categorias[i]) { %> selected <% } %> ><%=detalles.categorias[i]%></option>
+
+                        <% } %>
+                    </select>
+                </div>
+                <div>
+                    <label for="tipo" class="label">Tipo: </label>
+                    <select name="tipo">
+                        <% for (let i = 0; i < detalles.tipos.length; i++) { %>
+
+                            <option value="<%=detalles.tipos[i]%>" <% if(producto.tipo == detalles.tipos[i]) { %> selected <% } %> ><%=detalles.tipos[i]%></option>
+
+                        <% } %>
+                    </select>
+                </div>
+                <div>
+                    <label for="talla" class="label">Tallas</label>
+                    <% for (let i = 0; i < detalles.tallas.length; i++) { %>
+
+                        <input type="checkbox" value="<%=detalles.tallas[i]%>" name="talla" <% if(producto.tamano.includes(detalles.tallas[i]) ) { %> checked <% } %> ><%=detalles.tallas[i]%>
+
+                    <% } %>
+                </div>
+                <div>
+                    <label for="color" class="label">Colores</label>
+                    <% for (let i = 0; i < detalles.colores.length; i++) { %>
+
+                        <input type="checkbox" value="<%=detalles.colores[i]%>" name="color" <% if(producto.color.includes(detalles.colores[i]) ) { %> checked <% } %>  > <%=detalles.colores[i]%>
+
+                    <% } %>
+                </div>
+                <div>
+                    <label for="mainPic" class="label">Imagen</label>
+                    <p class="current-img"><%=producto.mainPic%></p>
+                    <input type="file" accept="image/*" name="mainPic">
+                </div>
+                <div>
+                    <label for="thumbnail" class="label">Thumbnail</label>
+                    <p class="current-img"><%=producto.thumbnail%></p>
+                    <input type="file" accept="image/*" name="thumbnail">
+                </div>
+                <div>
+                    <label for="alt" class="label">Texto Alternativo</label>
+                    <input class="input-text" type="text" name="alt" value="<%=producto.alt%>">
+                </div>
+                <button type="submit">Guardar</button>
+            </form>
+            <form class="product-delete" action="/products/<%=producto.id%>?_method=DELETE" method="POST">
+                <button type="submit" class="button-borrar">Borrar producto</button>
+            </form>
+
+        </div>
+        
+    </main>
+
+    <%- include( "../partials/footer" ) %>
+    
+</body>
+</html>

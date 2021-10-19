@@ -67,6 +67,14 @@ button:hover {
     flex-wrap: wrap;
 }
 
+.product-area h1 i {
+    color: var(--blue);
+}
+
+.product-area h1 i:hover {
+    color: var(--orange);
+}
+
 .flex-items {
     width: 100%;
 }
@@ -206,6 +214,7 @@ button:hover {
 .product-buttons #carrito:hover {
     border: 2.5px var(--darkorange) solid;
     background-color: var(--darkorange);
+    cursor: pointer;
 }
 
 .product-buttons #favoritos {
@@ -217,6 +226,7 @@ button:hover {
 .product-buttons #favoritos:hover {
     background-color: var(--blue);
     color: var(--white);
+    cursor: pointer;
 }
 
 aside {
@@ -384,7 +394,7 @@ p.review-user{
     
     .side-pic {
         width: 100%;
-        height: 50px;
+        height: 40px;
     }
 
     .side-pic img {
@@ -508,7 +518,7 @@ p.review-user{
 
     .main-pic img {
         width: 100%;
-        height: 80vh;
+        height: 70vh;
     }
 
     /* Product details */
