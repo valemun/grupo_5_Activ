@@ -18,7 +18,7 @@
 
                 <p class="subtitulo">¿Aún no eres miembro?</p>
 
-                <form action="/user/" method="POST">
+                <form action="/user/" method="POST" enctype="multipart/form-data">
                     <p class="field">
                         <label for="nombre">Nombre:</label>
                         <input class="input-text" type="text" name="nombre">
@@ -30,10 +30,6 @@
                     <p class="field">
                         <label for="correo">Correo:</label>
                         <input class="input-text" type="email" name="correo">
-                    </p>
-                    <p class="field">
-                        <label for="conficorreo">Confirmar correo:</label>
-                        <input class="input-text" type="email" name="conficorreo">
                     </p>
                     <p class="field">
                         <label for="contra">Contraseña:</label>

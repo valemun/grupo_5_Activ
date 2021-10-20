@@ -37,6 +37,10 @@ const controller = {
         let newId = 0;
         newId = users[users.length-1].id + 1;
 
+        console.log(req.file);
+
+        let imgName = (req.file ? "/images/users/"+req.file.filename : "/images/users/user_5.png");
+
         let user = {
             id: newId,
             nombre: req.body.nombre,
@@ -44,7 +48,7 @@ const controller = {
             email: req.body.correo,
             password: req.body.contra,
             tipo: "user",
-            imagen: "/images/users/user_6.png",
+            imagen: imgName,
         }
 
         users.push(user);
