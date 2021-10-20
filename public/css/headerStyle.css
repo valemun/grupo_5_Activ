@@ -108,6 +108,11 @@ main {
     margin-top: 54.8px;
 }
 
+.user {
+    font-size: 14px;
+    font-weight: 400;
+}
+
 
 @media (min-width: 560px) { }
 

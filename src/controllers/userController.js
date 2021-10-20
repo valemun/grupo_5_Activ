@@ -24,11 +24,38 @@ const controller = {
         res.render( "users/cart", {"productos":productos} );
     },
 
-    //Login y Regisro
+    //Login
     login: (req, res) => {
         res.render( "users/login" );
     },
-    
+
+    sesion: (req, res) => {
+        let usuarioLog = null;
+
+        for(let i = 0; i < users.length; i++){
+            if(users[i].email == req.body.correo && bcrypt.compareSync(req.body.contra, users[i].password)) {
+                usuarioLog = users[i];
+
+                if(req.body.recordar != undefined){
+                    res.cookie("recordarme", users[i].id, { maxAge: 60000 });
+                }
+
+                break;
+            }
+        }
+
+        if(usuarioLog!=null){
+            req.session.user = usuarioLog;
+            console.log("Se logró");
+            res.redirect( "/" );
+        }
+        else{
+            res.redirect( "/user/login/" );
+        }
+        
+    },
+
+    //Registro    
     register: (req, res) => {
         res.render( "users/register" );
     },

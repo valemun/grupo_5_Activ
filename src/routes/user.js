@@ -25,6 +25,7 @@ router.get( "/cart", userController.cart );
 
 // Sign in y sign up
 router.get( "/login", userController.login );
+router.post( "/login", userController.sesion );
 
 
 router.get( "/register", userController.register );

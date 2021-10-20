@@ -7,6 +7,12 @@ const methodOverride = require( "method-override" );
 const session = require( "express-session" );
 const cookieParser = require( "cookie-parser" );
 
+//Importar middlewares
+const cookiesMiddleware = require( "./middlewares/cookiesMiddleware" );
+const sessionMiddleware = require( "./middlewares/sessionMiddleware" );
+
+
+
 //Importar rutas
 const indexRouter = require( "./routes/index" );
 const productsRouter = require( "./routes/products" );
@@ -29,6 +35,10 @@ app.use(methodOverride("_method"))
 app.use(session( {secret: "Activ guarda tus secretos", resave: true,
 saveUninitialized: true}));
 app.use(cookieParser());
+
+//Middlewares
+app.use( cookiesMiddleware );
+app.use( sessionMiddleware );
 
 //Correr servidor
 app.listen( 3000, () => {
