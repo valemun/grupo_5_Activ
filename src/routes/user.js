@@ -5,6 +5,9 @@ const router = express.Router();
 
 const userController = require( "../controllers/userController" );
 
+//Importar middlewares
+const loginMiddleware = require( "../middlewares/loginMiddleware" );
+
 //Configuracion Multer
 const storage = multer.diskStorage({
     destination: (req, file, callback) => {
@@ -24,11 +27,11 @@ const upload = multer({ storage: storage });
 router.get( "/cart", userController.cart );
 
 // Sign in y sign up
-router.get( "/login", userController.login );
+router.get( "/login", loginMiddleware, userController.login );
 router.post( "/login", userController.sesion );
 
 
-router.get( "/register", userController.register );
+router.get( "/register", loginMiddleware, userController.register );
 router.post("/", upload.single("imagen"),userController.create);
 
 // Perfil de usuario

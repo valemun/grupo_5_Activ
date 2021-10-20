@@ -46,7 +46,6 @@ const controller = {
 
         if(usuarioLog!=null){
             req.session.user = usuarioLog;
-            console.log("Se logró");
             res.redirect( "/" );
         }
         else{

@@ -65,6 +65,12 @@ button {
 
 button:hover {
     background-color: var(--darkblue);
+    cursor: pointer;
+}
+
+button.especial:hover{
+    background-color: var(--orange);
+    cursor: pointer;
 }
 
 /* Popular ahora */
@@ -104,6 +110,7 @@ h2 {
         opacity:0.4;
         z-index: 1;
         display: block;
+        cursor: pointer;
 }
 
 .categoria p {
