@@ -1,5 +1,6 @@
 const path = require( "path" );
 const fs = require( "fs" );
+const bcrypt = require( "bcryptjs" );
 let productos = require( "../data/product.json" );
 let users = require( "../data/users.json" );
 
@@ -37,16 +38,19 @@ const controller = {
         let newId = 0;
         newId = users[users.length-1].id + 1;
 
-        console.log(req.file);
-
         let imgName = (req.file ? "/images/users/"+req.file.filename : "/images/users/user_5.png");
+
+        let contra = bcrypt.hashSync(req.body.contra, 12);
+
+        console.log(req.body);
 
         let user = {
             id: newId,
             nombre: req.body.nombre,
             apellido: req.body.apellido,
             email: req.body.correo,
-            password: req.body.contra,
+            password: contra,
+            fechaNac: req.body.fecha,
             tipo: "user",
             imagen: imgName,
         }

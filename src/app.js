@@ -4,6 +4,8 @@ const app     = express();
 const path    = require( "path" );
 const publicPath = path.resolve( "public" );
 const methodOverride = require( "method-override" );
+const session = require( "express-session" );
+const cookieParser = require( "cookie-parser" );
 
 //Importar rutas
 const indexRouter = require( "./routes/index" );
@@ -22,7 +24,11 @@ app.use(express.json());
 //    res.status(404).render("not-found")
 // });
 app.use(methodOverride("_method"))
-    
+
+//Session y Cookies
+app.use(session( {secret: "Activ guarda tus secretos", resave: true,
+saveUninitialized: true}));
+app.use(cookieParser());
 
 //Correr servidor
 app.listen( 3000, () => {
