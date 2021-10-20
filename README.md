@@ -15,8 +15,6 @@ Tienda en línea de ropa y artículos deportivos
 <h2>Breve descripción de los integrantes:</h2>
 Valeria Muñoz - Soy estudiante de ingeniería en diseño digital con interés por hacer ejercicio y verme cool mientras lo hago
 
-Natalie Mendieta - Soy egresada de ingeniería en telecomunicaciones con interés en el comercio digital
-
 <h2>Sitios de referencia:</h2>
 https://www.underarmour.com.mx/<br>
 Under Armour es un outlet de ropa y accesorios deportivos. La página de la compañía vende ropa deportiva y de vestimenta informal ideal para una búsqueda personalizada.
