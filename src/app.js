@@ -11,8 +11,6 @@ const cookieParser = require( "cookie-parser" );
 const cookiesMiddleware = require( "./middlewares/cookiesMiddleware" );
 const sessionMiddleware = require( "./middlewares/sessionMiddleware" );
 
-
-
 //Importar rutas
 const indexRouter = require( "./routes/index" );
 const productsRouter = require( "./routes/products" );
