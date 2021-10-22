@@ -2,15 +2,12 @@
     {
         "id": 1,
         "nombre": "Leggins Activ X",
-        "desc": "Leggins de material duradero y cómodos",
         "precio": "199.80",
         "thumbnail": "/images/product-placeholder.jpg",
-        "breadcrumb": ["Mujeres", "Bottoms"],
         "mainPic": "/images/product-leggins.jpg",
-        "sidePic": "/images/product-leggins.jpg",
-        "alt": "producto",
-        "tamano": ["XS", "S", "M", "L", "XL"],
-        "color": ["Azul", "Rosa", "Verde", "Rojo"]
+        "tamano": "S",
+        "color": "Azul",
+        "cantidad": 4
 
     },
     {
