@@ -13,7 +13,7 @@
     <main>
 
         <div class="categoria-titulo">
-            <h1>Mujeres</h1>
+            <h1>Productos</h1>
         </div>
 
         <section id="productos">
@@ -22,13 +22,13 @@
 
             <article class="producto">
                 
-                <a href="/products/<%=productos[i].id%>">
+                <a href="/products/<%=productos[i].product_id%>">
                 <div class="foto-producto">
-                    <img src="<%=productos[i].thumbnail%>" alt="<%=productos[i].alt%>">
+                    <img src="<%=productos[i].product_thumbnail%>" alt="<%=productos[i].product_alt%>">
                 </div>
-                <p class="titulo-producto"><%=productos[i].nombre%></p>
-                <p class="descripcion-producto"><%=productos[i].desc%></p>
-                <p class="precio-producto">$<%=productos[i].precio%></p>
+                <p class="titulo-producto"><%=productos[i].product_name%></p>
+                <p class="descripcion-producto"><%=productos[i].product_desc%></p>
+                <p class="precio-producto">$<%=productos[i].product_price%></p>
                 </a>
             
             </article>

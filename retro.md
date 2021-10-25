@@ -137,3 +137,30 @@
 <ul>
     <li>Empezar a programar sin tener una idea clara</li>
 </ul>
+
+<h2>Sprint 6</h2>
+
+<h3>Comenzar a hacer:</h3>
+<ul>
+    <li>Entender el scope de todo lo que falta que hacer para empezar a priorizar</li>
+</ul>
+
+<h3>Hacer más:</h3>
+  <ul>  
+    <li>Terminar todas las actividades que tengo propuestas ese día</li>
+</ul>
+
+<h3>Continuar haciendo:</h3>
+<ul>
+  <li>Marcando mi avance y separando las tareas por partes</li>
+</ul>
+
+<h3>Hacer menos:</h3>
+<ul>
+    <li>Conformarme con hacer lo mínimo por el día</li>
+</ul>
+
+<h3>Dejar de hacer:</h3>
+<ul>
+    <li>Procrastinar iniciar una tarea por temor a su dificultad</li>
+</ul>

@@ -28,15 +28,15 @@
 
         <div id="search-bar">
 
-            <form action="">
-                <input type="text" placeholder="Buscar" name="search">
+            <form action="/products/" method="GET">
+                <input type="text" placeholder="Buscar" name="query">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
             
         </div>
 
         <ul>
-            <li><a href="/user/login"><i class="fas fa-user"></i></a> <% if(locals.user != undefined) { %> <span class="user">¡Hola <%=locals.user.nombre%>! </span> <% } %></li>
+            <li><a href="/user/login"><i class="fas fa-user"></i></a> <% if(locals.session != undefined) { %> <span class="user">¡Hola <%=locals.session.user_firstname%>! </span> <% } %></li>
             <li><a href="/user/cart"><i class="fas fa-shopping-cart"></i></a></li>
         </ul>
 

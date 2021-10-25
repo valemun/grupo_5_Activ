@@ -1,117 +1,277 @@
 const path = require( "path" );
 const fs = require( "fs" );
-let productos = require( "../data/product.json" );
+const db = require("../database/models");
+const Op = db.Sequelize.Op;
 let reviews = require( "../data/reviews.json" );
-let productDetails = {
-    categorias: ["Unisex", "Mujeres", "Hombres"],
-    tipos: ["Ropa", "Tenis", "Accesorios"],
-    tallas: ["XS", "S", "M", "L", "XL"],
-    colores: ["Azul", "Verde", "Amarillo", "Naranja", "Rosa", "Rojo", "Morado", "Negro", "Blanco"]
-};
+const { sequelize } = require("../database/models");
+
 
 //Controlador productos
 
 const controller = {
 
     list: (req, res) => {
-        res.render( "products/productList", {"productos":productos} );
+
+        if(req.query.query != ""){
+
+            db.Products.findAll({
+                where: {
+                    product_name: {[Op.like]: "%"+req.query.query+"%"}
+                }
+            })
+            .then((productos) => {
+
+            res.render( "products/productList", {"productos":productos} );
+
+        });
+
+        }else{
+
+            db.Products.findAll()
+            .then((productos) => {
+
+            res.render( "products/productList", {"productos":productos} );
+
+        });
+
+        }
+        
     },
 
     new: (req, res) => {
-        res.render( "products/productCreate",  {"detalles":productDetails} );
+
+        db.Categories.findAll()
+            .then((categorias) => {
+
+                db.CategoryTypes.findAll()
+                .then((tipos) => {
+                    
+                    db.Sizes.findAll()
+                    .then((tallas) => {
+                        
+                        db.Colors.findAll()
+                        .then((colores) => {
+
+                            res.render( "products/productCreate",  {"categorias":categorias, "tipos":tipos, "tallas":tallas, "colores": colores} )
+
+                        })
+
+                    })
+
+                })
+
+            })
+        
     },
 
     create: (req, res) => {
 
-        let newId = 0;
-        newId = productos[productos.length-1].id + 1;
+        console.log(req.body);
 
-        let producto = {
-            id: newId,
-            nombre: req.body.nombre,
-            desc: req.body.desc,
-            precio: req.body.precio,
-            thumbnail: "/images/product-placeholder.jpg",
-            categoria: req.body.categoria,
-            tipo: req.body.tipo,
-            mainPic: "/images/product-leggins.jpg",
-            sidePic: "/images/product-leggins.jpg",
-            alt: req.body.alt,
-            tamano: req.body.talla,
-            color: req.body.color,
-        }
+        db.Products.create({
 
-        productos.push(producto);
+            product_name: req.body.nombre,
+            product_price: req.body.precio,
+            product_desc: req.body.desc,
+            product_category: req.body.categoria,
+            product_type: req.body.tipo,
+            product_image: "/images/product-leggins.jpg",
+            product_thumbnail: "/images/product-placeholder.jpg",
+            product_alt: req.body.alt
 
-        let productosJSON = JSON.stringify(productos);
+        })
+        .then((product) => {
 
-        fs.writeFileSync(path.resolve( "src/data/product.json" ), productosJSON);
+            for(i=0; i<req.body.talla.length; i++){
+                db.ProductSizes.create({
+                    product_id: product.product_id,
+                    size_id: req.body.talla[i]
+                })
+            }
+            
+            for(i=0; i<req.body.color.length; i++){
+                db.ProductColors.create({
+                    product_id: product.product_id,
+                    color_id: req.body.color[i]
+                })
+            }
 
-        res.redirect( "products/");
+            res.redirect( "/products/");
+
+        })
+        
     },
 
     detail: (req, res) => {
 
         let id = req.params.id;
 
-        let producto = productos.find((producto) => {
-            return producto.id == id
-        })
+        db.Products.findByPk(id, {
+            include: [
+                {model: db.Categories, as: "product_category_info"},
+                {model: db.CategoryTypes, as: "product_type_info"}, 
+                {model: db.Sizes, as: "product_sizes_info"},
+                {model: db.Colors, as: "product_colors_info"}  
+        ]})
+        .then((producto) => {
 
-        res.render( "products/productDetail",  {"producto":producto, "productos":productos, "review":reviews} );
+            db.Products.findAll()
+            .then((productos) => {
+
+            res.render( "products/productDetail",  {"producto":producto, "productos":productos, "review":reviews} );
+
+        });
+
+        });
     },
 
     edit: (req, res) => {
+
         let id = req.params.id;
 
-        let producto = productos.find((producto) => {
-            return producto.id == id
-        })
+        db.Products.findByPk(id, {
+            include: [
+                {model: db.Categories, as: "product_category_info"},
+                {model: db.CategoryTypes, as: "product_type_info"}, 
+                {model: db.Sizes, as: "product_sizes_info"},
+                {model: db.Colors, as: "product_colors_info"}  
+        ]})
+        .then((producto) => {
 
-        res.render( "products/productEdit",  {"producto":producto, "detalles": productDetails} )
+            db.Categories.findAll()
+            .then((categorias) => {
+
+                db.CategoryTypes.findAll()
+                .then((tipos) => {
+                    
+                    db.Sizes.findAll()
+                    .then((tallas) => {
+                        
+                        db.Colors.findAll()
+                        .then((colores) => {
+
+                            res.render( "products/productEdit",  {"producto":producto, "categorias":categorias, "tipos":tipos, "tallas":tallas, "colores": colores} )
+
+                        })
+
+                    })
+
+                })
+
+            })
+
+        });
     },
 
     update: (req, res) => {
-        let id = req.params.id;
-        
-        productos.forEach( producto => {
-            if(producto.id == id){
-                producto.nombre = req.body.nombre;
-                producto.desc = req.body.desc;
-                producto.precio = req.body.precio;
-                producto.thumbnail = "/images/product-placeholder.jpg";
-                producto.categoria = req.body.categoria;
-                producto.tipo = req.body.tipo;
-                producto.mainPic = "/images/product-leggins.jpg";
-                producto.sidePic = "/images/product-leggins.jpg";
-                producto.alt = req.body.alt;
-                producto.tamano = req.body.talla;
-                producto.color = req.body.color;
-            }}
-        )
 
-        let productosJSON = JSON.stringify(productos);
+        db.Products.update({
 
-        fs.writeFileSync(path.resolve( "src/data/product.json" ), productosJSON);
+            product_name: req.body.nombre,
+            product_price: req.body.precio,
+            product_desc: req.body.desc,
+            product_category: req.body.categoria,
+            product_type: req.body.tipo,
+            product_image: "/images/product-leggins.jpg",
+            product_thumbnail: "/images/product-placeholder.jpg",
+            product_alt: req.body.alt
+
+        },
+        {
+            where: {
+                product_id: req.params.id
+            }
+        })
+        .then((product) => {
+            
         
-        res.redirect( "/products/"+id);
-    },
+            db.CartProducts.destroy({
+                where: {
+                    product_id: req.params.id
+                }
+            })
+            .then(() => {
     
+                db.ProductSizes.destroy({
+                    where: {
+                        product_id: req.params.id
+                    }
+                })
+                .then(() => {
+    
+                    db.ProductColors.destroy({
+                        where: {
+                            product_id: req.params.id
+                        }
+                    })
+                    .then(() => {
+    
+                        for(i=0; i<req.body.talla.length; i++){
+                            db.ProductSizes.create({
+                                product_id: req.params.id,
+                                size_id: req.body.talla[i]
+                            })
+                        }
+                        
+                        for(i=0; i<req.body.color.length; i++){
+                            db.ProductColors.create({
+                                product_id: req.params.id,
+                                color_id: req.body.color[i]
+                            })
+                        }
+            
+                        res.redirect( "/products/"+req.params.id);
+    
+                    })
+    
+                })
+    
+            })
+    
+        })
+        
+    },
+ 
     delete: (req, res) => {
-        let id = req.params.id;
 
-        productos = productos.filter(
-            producto => {
-                if(producto.id != id){
-                    return producto;
+        db.CartProducts.destroy({
+            where: {
+                product_id: req.params.id
+            }
+        })
+        .then(() => {
 
-        }})
+            db.ProductSizes.destroy({
+                where: {
+                    product_id: req.params.id
+                }
+            })
+            .then(() => {
 
-        let productosJSON = JSON.stringify(productos);
+                db.ProductColors.destroy({
+                    where: {
+                        product_id: req.params.id
+                    }
+                })
+                .then(() => {
 
-        fs.writeFileSync(path.resolve( "src/data/product.json" ), productosJSON);
+                    db.Products.destroy({
+                        where: {
+                            product_id: req.params.id
+                        }
+                    })
+                    .then(() => {
+                        
+                        res.redirect( "/products/");
 
-        res.redirect( "/products/");
+                    })
+
+                })
+
+            })
+
+        })
+
     }
 }
 

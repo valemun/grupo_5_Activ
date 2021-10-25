@@ -18,26 +18,26 @@
 
         <div class="form-new">
             
-            <form action="/products/<%=producto.id%>?_method=PUT" method="POST">
+            <form action="/products/<%=producto.product_id%>?_method=PUT" method="POST">
 
                 <div>
                     <label for="nombre" class="label">Nombre</label>
-                    <input class="input-text" type="text" name="nombre" value="<%=producto.nombre%>">
+                    <input class="input-text" type="text" name="nombre" value="<%=producto.product_name%>">
                 </div>
                 <div>
                     <label for="precio" class="label">Precio</label>
-                    <input class="input-text" type="number" step=".01" name="precio" value="<%=producto.precio%>">
+                    <input class="input-text" type="number" step=".01" name="precio" value="<%=producto.product_price%>">
                 </div>
                 <div>
                     <label for="desc" class="label">Descripción</label>
-                    <textarea name="desc" maxlength="40"> <%=producto.desc%> </textarea>
+                    <textarea name="desc" maxlength="40"> <%=producto.product_desc%> </textarea>
                 </div>
                 <div>
                     <label for="categoria" class="label">Categoría</label>
                     <select name="categoria">
-                        <% for (let i = 0; i < detalles.categorias.length; i++) { %>
+                        <% for (let i = 0; i < categorias.length; i++) { %>
 
-                            <option value="<%=detalles.categorias[i]%>" <% if(producto.categoria == detalles.categorias[i]) { %> selected <% } %> ><%=detalles.categorias[i]%></option>
+                            <option value="<%=categorias[i].category_id%>" <% if(producto.product_category_info.category_name == categorias[i].category_name) { %> selected <% } %> ><%=categorias[i].category_name%></option>
 
                         <% } %>
                     </select>
@@ -45,46 +45,47 @@
                 <div>
                     <label for="tipo" class="label">Tipo: </label>
                     <select name="tipo">
-                        <% for (let i = 0; i < detalles.tipos.length; i++) { %>
+                        <% for (let i = 0; i < tipos.length; i++) { %>
 
-                            <option value="<%=detalles.tipos[i]%>" <% if(producto.tipo == detalles.tipos[i]) { %> selected <% } %> ><%=detalles.tipos[i]%></option>
+                            <option value="<%=tipos[i].category_type_id%>" <% if(producto.product_type_info.category_type_name == tipos[i].category_type_name) { %> selected <% } %> ><%=tipos[i].category_type_name%></option>
 
                         <% } %>
                     </select>
                 </div>
                 <div>
                     <label for="talla" class="label">Tallas</label>
-                    <% for (let i = 0; i < detalles.tallas.length; i++) { %>
+                    <% for (let i = 0; i < tallas.length; i++) { %>
 
-                        <input type="checkbox" value="<%=detalles.tallas[i]%>" name="talla" <% if(producto.tamano.includes(detalles.tallas[i]) ) { %> checked <% } %> ><%=detalles.tallas[i]%>
-
+                        <input type="checkbox" value="<%=tallas[i].size_id%>" name="talla" <% for (let l = 0; l < producto.product_sizes_info.length; l++) { %>
+                            <% if(producto.product_sizes_info[l].size_name == tallas[i].size_name ) { %> checked <% } %> <% } %>  > <%=tallas[i].size_name%>
                     <% } %>
                 </div>
                 <div>
                     <label for="color" class="label">Colores</label>
-                    <% for (let i = 0; i < detalles.colores.length; i++) { %>
+                    <% for (let i = 0; i < colores.length; i++) { %>
 
-                        <input type="checkbox" value="<%=detalles.colores[i]%>" name="color" <% if(producto.color.includes(detalles.colores[i]) ) { %> checked <% } %>  > <%=detalles.colores[i]%>
-
+                        <input type="checkbox" value="<%=colores[i].color_id%>" name="color" 
+                        <% for (let l = 0; l < producto.product_colors_info.length; l++) { %>
+                            <% if(producto.product_colors_info[l].color_name == colores[i].color_name ) { %> checked <% } %> <% } %>  > <%=colores[i].color_name%>
                     <% } %>
                 </div>
                 <div>
                     <label for="mainPic" class="label">Imagen</label>
-                    <p class="current-img"><%=producto.mainPic%></p>
+                    <p class="current-img"><%=producto.product_image%></p>
                     <input type="file" accept="image/*" name="mainPic">
                 </div>
                 <div>
                     <label for="thumbnail" class="label">Thumbnail</label>
-                    <p class="current-img"><%=producto.thumbnail%></p>
+                    <p class="current-img"><%=producto.product_thumbnail%></p>
                     <input type="file" accept="image/*" name="thumbnail">
                 </div>
                 <div>
                     <label for="alt" class="label">Texto Alternativo</label>
-                    <input class="input-text" type="text" name="alt" value="<%=producto.alt%>">
+                    <input class="input-text" type="text" name="alt" value="<%=producto.product_alt%>">
                 </div>
                 <button type="submit">Guardar</button>
             </form>
-            <form class="product-delete" action="/products/<%=producto.id%>?_method=DELETE" method="POST">
+            <form class="product-delete" action="/products/<%=producto.product_id%>?_method=DELETE" method="POST">
                 <button type="submit" class="button-borrar">Borrar producto</button>
             </form>
 

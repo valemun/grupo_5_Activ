@@ -1,8 +1,7 @@
 const path = require( "path" );
 const fs = require( "fs" );
+const db = require("../database/models");
 const bcrypt = require( "bcryptjs" );
-let productos = require( "../data/product.json" );
-let users = require( "../data/users.json" );
 
 
 const controller = {
@@ -10,18 +9,99 @@ const controller = {
     //Perfil de usuario
     profile: (req, res) => {
 
-        let id = req.params.id;
+        db.Users.findByPk(req.params.id, {include: [
+            {model: db.UserTypes, as: "user_type_info"},
+        ]})
+        .then((user) =>{
 
-        let user = users.find((user) => {
-            return user.id == id
+            db.Products.findAll()
+            .then((productos) => {
+
+                res.render( "users/profile", {"user": user, "productos":productos} );
+
+            })
+
+        })
+        
+    },
+
+    edit: (req, res) => {
+
+        db.Users.findByPk(req.params.id, {include: [
+            {model: db.UserTypes, as: "user_type_info"},
+        ]})
+        .then((user) =>{
+
+            res.render( "users/profileEdit", {"user": user});
+
         })
 
-        res.render( "users/profile", {"user": user, "productos":productos} );
+        
+    },
+
+    update: (req, res) => {
+
+        if(req.file){
+
+            let imgName = "/images/users/"+req.file.filename;
+
+            db.Users.update({
+
+                user_firstname: req.body.nombre,
+                user_lastname: req.body.apellido,
+                user_email: req.body.correo,
+                user_dob: req.body.fecha,
+                user_avatar: imgName
+    
+            },
+            {
+                where: {
+                    user_id: req.params.id
+                }
+            })
+            .then((user) => {
+    
+                res.redirect( "/user/"+req.params.id);
+    
+            })
+
+        }
+        else {
+
+            db.Users.update({
+
+                user_firstname: req.body.nombre,
+                user_lastname: req.body.apellido,
+                user_email: req.body.correo,
+                user_dob: req.body.fecha    
+            },
+            {
+                where: {
+                    user_id: req.params.id
+                }
+            })
+            .then((user) => {
+    
+                res.redirect( "/user/"+req.params.id);
+    
+            })
+
+        }
+
+        
+        
     },
 
     //Carrito
     cart: (req, res) => {
-        res.render( "users/cart", {"productos":productos} );
+
+        db.Products.findAll()
+        .then((productos) => {
+
+            res.render( "users/cart", {"productos":productos} );
+
+        });
+        
     },
 
     //Login
@@ -30,27 +110,45 @@ const controller = {
     },
 
     sesion: (req, res) => {
+
         let usuarioLog = null;
 
-        for(let i = 0; i < users.length; i++){
-            if(users[i].email == req.body.correo && bcrypt.compareSync(req.body.contra, users[i].password)) {
-                usuarioLog = users[i];
+        db.Users.findOne({
+            where: {
+                user_email: req.body.correo
+            }
+        })
+        .then((user) => {
+            
+            if(bcrypt.compareSync(req.body.contra, user.dataValues.user_password)) {
+                usuarioLog = user.dataValues;
+
+                console.log(usuarioLog);
+                console.log(usuarioLog.user_id);
+                console.log("QUE ESTA PASANDOOO");
+                console.log(req.body.recordar);
 
                 if(req.body.recordar != undefined){
-                    res.cookie("recordarme", users[i].id, { maxAge: 60000 });
+                    console.log(usuarioLog.user_id);
+                    res.cookie("recordarme", usuarioLog.user_id, { maxAge: 60000 });
                 }
-
-                break;
             }
-        }
 
-        if(usuarioLog!=null){
-            req.session.user = usuarioLog;
-            res.redirect( "/" );
-        }
-        else{
-            res.redirect( "/user/login/" );
-        }
+            console.log("QUE ONDA");
+            console.log(usuarioLog);
+
+            if(usuarioLog!=null){
+                req.session.user = usuarioLog;
+                console.log("session xd")
+                console.log(req.session.user)
+                console.log("FIN")
+                res.redirect( "/" );
+            }
+            else{
+                res.redirect( "/user/login/" );
+            }
+
+        })
         
     },
 
@@ -61,33 +159,29 @@ const controller = {
 
     create: (req, res) => {
 
-        let newId = 0;
-        newId = users[users.length-1].id + 1;
-
         let imgName = (req.file ? "/images/users/"+req.file.filename : "/images/users/user_5.png");
 
         let contra = bcrypt.hashSync(req.body.contra, 12);
 
-        console.log(req.body);
+        db.Users.create({
 
-        let user = {
-            id: newId,
-            nombre: req.body.nombre,
-            apellido: req.body.apellido,
-            email: req.body.correo,
-            password: contra,
-            fechaNac: req.body.fecha,
-            tipo: "user",
-            imagen: imgName,
-        }
+            user_type: 2,
+            user_firstname: req.body.nombre,
+            user_lastname: req.body.apellido,
+            user_email: req.body.correo,
+            user_password: contra,
+            user_dob: req.body.fecha,
+            user_avatar: imgName
 
-        users.push(user);
+        })
+        .then((user) => {
 
-        let usersJSON = JSON.stringify(users);
+            req.session.user = user;
 
-        fs.writeFileSync(path.resolve( "src/data/users.json" ), usersJSON);
+            res.redirect( "/user/"+user.user_id );
 
-        res.redirect( "/user/"+newId );
+        })
+
     },
 }
 

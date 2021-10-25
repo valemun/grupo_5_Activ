@@ -1,6 +1,6 @@
 function adminMiddleware (req, res, next) {
 
-    if(req.session.user != undefined && req.session.user.tipo == "admin"){
+    if(req.session.user != undefined && req.session.user.user_type == 1){
             
             next();
 

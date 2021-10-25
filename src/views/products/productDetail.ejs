@@ -16,11 +16,11 @@
 
             <ul>
                 
-                <li><a href=""><%=producto.categoria%></a></li>
+                <li><a href=""><%=producto.product_category_info.category_name%></a></li>
                 <li><i class="fas fa-chevron-right"></i></li>
-                <li><a href=""><%=producto.tipo%></a></li>
+                <li><a href=""><%=producto.product_type_info.category_type_name%></a></li>
                 <li><i class="fas fa-chevron-right"></i></li>
-                <li><a href=""><%=producto.nombre%></a></li>
+                <li><a href=""><%=producto.product_name%></a></li>
 
             </ul>
 
@@ -30,10 +30,10 @@
 
             <div class="product-info mobile flex-items">
 
-                <h1 class="titulo-producto"><%=producto.nombre%> <a href="/products/<%=producto.id%>/edit"><i class="fas fa-pen"></i></a></h1>
+                <h1 class="titulo-producto"><%=producto.product_name%> <a href="/products/<%=producto.product_id%>/edit"><i class="fas fa-pen"></i></a></h1>
                 <p class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></p>
-                <p class="precio-producto">$<%=producto.precio%></p>
-                <p class="descripcion-producto"><%=producto.desc%></p>
+                <p class="precio-producto">$<%=producto.product_price%></p>
+                <p class="descripcion-producto"><%=producto.product_desc%></p>
 
             </div>
 
@@ -42,22 +42,22 @@
                 <div class="side-pics">
 
                     <div class="side-pic">
-                        <img src="<%=producto.sidePic%>">
+                        <img src="<%=producto.product_image%>">
                     </div>
 
                     <div class="side-pic">
-                        <img src="<%=producto.sidePic%>">
+                        <img src="<%=producto.product_image%>">
                     </div>
 
                     <div class="side-pic">
-                        <img src="<%=producto.sidePic%>">
+                        <img src="<%=producto.product_image%>">
                     </div>
 
                 </div>
 
                 <div class="main-pic">
 
-                    <img src="<%=producto.mainPic%>">
+                    <img src="<%=producto.product_image%>">
 
                 </div>
 
@@ -67,15 +67,15 @@
                 
                 <div class="product-info desktop">
 
-                    <h1 class="titulo-producto"><%=producto.nombre%> <a href="/products/<%=producto.id%>/edit"><i class="fas fa-pen"></i></a></h1>
+                    <h1 class="titulo-producto"><%=producto.product_name%> <a href="/products/<%=producto.product_id%>/edit"><i class="fas fa-pen"></i></a></h1>
                     <p class="star-rating">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                         <i class="far fa-star"></i></p>
-                    <p class="precio-producto">$<%=producto.precio%></p>
-                    <p class="descripcion-producto"><%=producto.desc%></p>
+                    <p class="precio-producto">$<%=producto.product_price%></p>
+                    <p class="descripcion-producto"><%=producto.product_desc%></p>
 
                 </div>
 
@@ -87,10 +87,10 @@
 
                             <label for="size">Talla</label>
 
-                            <% for (let i = 0; i < producto.tamano.length; i++) { %>
+                            <% for (let i = 0; i < producto.product_sizes_info.length; i++) { %>
 
                             <div class="sizes">
-                                <input type="radio" value="<%=producto.tamano[i]%>" name="size" id="size"> <%=producto.tamano[i]%> 
+                                <input type="radio" value="<%=producto.product_sizes_info[i].size_id%>" name="size" id="size"> <%=producto.product_sizes_info[i].size_name%> 
                             </div>
 
                             <% } %>
@@ -120,9 +120,9 @@
                                 <label for="color">Color</label>
                                 <select name="color">
 
-                                    <% for (let i = 0; i < producto.color.length; i++) { %>
+                                    <% for (let i = 0; i < producto.product_colors_info.length; i++) { %>
 
-                                    <option value="<%=producto.color[i]%>"><%=producto.color[i]%></option>
+                                    <option value="<%=producto.product_colors_info[i].color_id%>"><%=producto.product_colors_info[i].color_name%></option>
 
                                     <% } %>
 
@@ -166,13 +166,13 @@
 
             <article class="producto-parecido">
                 
-                <a href="/products/<%=productos[i].id%>">
+                <a href="/products/<%=productos[i].product_id%>">
                 <div class="foto-parecido">
-                    <img src="<%=productos[i].thumbnail%>" alt="<%=productos[i].alt%>">
+                    <img src="<%=productos[i].product_thumbnail%>" alt="<%=productos[i].product_alt%>">
                 </div>
-                <p class="titulo-producto"><%=productos[i].nombre%></p>
-                <p class="descripcion-producto"><%=productos[i].desc%></p>
-                <p class="precio-producto">$<%=productos[i].precio%></p>
+                <p class="titulo-producto"><%=productos[i].product_name%></p>
+                <p class="descripcion-producto"><%=productos[i].product_dec%></p>
+                <p class="precio-producto">$<%=productos[i].product_price%></p>
                 </a>
             
             </article>

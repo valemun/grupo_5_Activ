@@ -18,7 +18,7 @@
 
         <div class="form-new">
             
-            <form action="/products" method="POST" enctype="multipart/form-data">
+            <form action="/products/" method="POST">
 
                 <div>
                     <label for="nombre" class="label">Nombre</label>
@@ -35,9 +35,9 @@
                 <div>
                     <label for="categoria" class="label">Categoría</label>
                     <select name="categoria">
-                        <% for (let i = 0; i < detalles.categorias.length; i++) { %>
+                        <% for (let i = 0; i < categorias.length; i++) { %>
 
-                            <option value="<%=detalles.categorias[i]%>"><%=detalles.categorias[i]%></option>
+                            <option value="<%=categorias[i].category_id%>" ><%=categorias[i].category_name%></option>
 
                         <% } %>
                     </select>
@@ -45,26 +45,26 @@
                 <div>
                     <label for="tipo" class="label">Tipo: </label>
                     <select name="tipo">
-                        <% for (let i = 0; i < detalles.tipos.length; i++) { %>
+                        <% for (let i = 0; i < tipos.length; i++) { %>
 
-                            <option value="<%=detalles.tipos[i]%>"><%=detalles.tipos[i]%></option>
+                            <option value="<%=tipos[i].category_type_id%>" ><%=tipos[i].category_type_name%></option>
 
                         <% } %>
                     </select>
                 </div>
                 <div>
                     <label for="talla" class="label">Tallas</label>
-                    <% for (let i = 0; i < detalles.tallas.length; i++) { %>
+                    <% for (let i = 0; i < tallas.length; i++) { %>
 
-                        <input type="checkbox" value="<%=detalles.tallas[i]%>" name="talla"><%=detalles.tallas[i]%>
+                        <input type="checkbox" value="<%=tallas[i].size_id%>" name="talla"> <%=tallas[i].size_name%>
 
                     <% } %>
                 </div>
                 <div>
                     <label for="color" class="label">Colores</label>
-                    <% for (let i = 0; i < detalles.colores.length; i++) { %>
+                    <% for (let i = 0; i < colores.length; i++) { %>
 
-                        <input type="checkbox" value="<%=detalles.colores[i]%>" name="color"><%=detalles.colores[i]%>
+                        <input type="checkbox" value="<%=colores[i].color_id%>" name="color" > <%=colores[i].color_name%>
 
                     <% } %>
                 </div>

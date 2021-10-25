@@ -32,10 +32,14 @@ router.post( "/login", userController.sesion );
 
 
 router.get( "/register", loginMiddleware, userController.register );
-router.post("/", upload.single("imagen"),userController.create);
+router.post("/", upload.single("imagen"), userController.create);
 
 // Perfil de usuario
 router.get( "/:id", userController.profile );
+
+//Editar perfil
+router.get( "/:id/edit", userController.edit );
+router.put( "/:id", upload.single("imagen"), userController.update );
 
 
 module.exports = router;
