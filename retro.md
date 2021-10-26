@@ -191,3 +191,30 @@
 <ul>
     <li>Perder tiempo en iniciar la siguiente tarea después de terminar la pasada</li>
 </ul>
+
+<h2>Sprint 8</h2>
+
+<h3>Comenzar a hacer:</h3>
+<ul>
+    <li>Buscar entender las respuestas y código que me sale como resultado en stack overflow cuando tengo dudas</li>
+</ul>
+
+<h3>Hacer más:</h3>
+  <ul>  
+    <li>Retos de programación para no perder práctica</li>
+</ul>
+
+<h3>Continuar haciendo:</h3>
+<ul>
+  <li>Practicando programación y retando mis habilidades</li>
+</ul>
+
+<h3>Hacer menos:</h3>
+<ul>
+    <li>Copiar código sin entender lo que se está haciendo</li>
+</ul>
+
+<h3>Dejar de hacer:</h3>
+<ul>
+    <li>Dudar de mis habilidades y procrastinar por medio de no poder hacer lo pedido</li>
+</ul>
