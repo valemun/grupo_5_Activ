@@ -2,6 +2,7 @@ const path = require( "path" );
 const fs = require( "fs" );
 const db = require("../database/models");
 const bcrypt = require( "bcryptjs" );
+const { validationResult } = require( "express-validator" );
 
 
 const controller = {
@@ -49,7 +50,6 @@ const controller = {
 
                 user_firstname: req.body.nombre,
                 user_lastname: req.body.apellido,
-                user_email: req.body.correo,
                 user_dob: req.body.fecha,
                 user_avatar: imgName
     
@@ -72,7 +72,6 @@ const controller = {
 
                 user_firstname: req.body.nombre,
                 user_lastname: req.body.apellido,
-                user_email: req.body.correo,
                 user_dob: req.body.fecha    
             },
             {
@@ -111,6 +110,15 @@ const controller = {
 
     sesion: (req, res) => {
 
+        let errores = validationResult(req);
+
+        if(!errores.isEmpty()){
+
+            res.render("users/login", {"errores": errores.mapped(), "old":req.body })
+
+        }
+        else{
+
         let usuarioLog = null;
 
         db.Users.findOne({
@@ -123,32 +131,21 @@ const controller = {
             if(bcrypt.compareSync(req.body.contra, user.dataValues.user_password)) {
                 usuarioLog = user.dataValues;
 
-                console.log(usuarioLog);
-                console.log(usuarioLog.user_id);
-                console.log("QUE ESTA PASANDOOO");
-                console.log(req.body.recordar);
-
                 if(req.body.recordar != undefined){
-                    console.log(usuarioLog.user_id);
                     res.cookie("recordarme", usuarioLog.user_id, { maxAge: 60000 });
                 }
             }
 
-            console.log("QUE ONDA");
-            console.log(usuarioLog);
-
             if(usuarioLog!=null){
                 req.session.user = usuarioLog;
-                console.log("session xd")
-                console.log(req.session.user)
-                console.log("FIN")
                 res.redirect( "/" );
             }
             else{
-                res.redirect( "/user/login/" );
+                res.redirect( "/user/login" );
             }
 
         })
+        }
         
     },
 
@@ -158,6 +155,15 @@ const controller = {
     },
 
     create: (req, res) => {
+
+        let errores = validationResult(req);
+
+        if(!errores.isEmpty()){
+
+            res.render("users/register", {"errores": errores.mapped(), "old":req.body });
+
+        }
+        else{
 
         let imgName = (req.file ? "/images/users/"+req.file.filename : "/images/users/user_5.png");
 
@@ -181,6 +187,8 @@ const controller = {
             res.redirect( "/user/"+user.user_id );
 
         })
+
+        }
 
     },
 }

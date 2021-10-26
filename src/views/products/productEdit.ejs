@@ -17,12 +17,17 @@
         </div>
 
         <div class="form-new">
+
+            <div class="errores">
+                <ul class="validaciones">
+                </ul>
+            </div>
             
-            <form action="/products/<%=producto.product_id%>?_method=PUT" method="POST">
+            <form class="form_product" action="/products/<%=producto.product_id%>?_method=PUT" method="POST">
 
                 <div>
                     <label for="nombre" class="label">Nombre</label>
-                    <input class="input-text" type="text" name="nombre" value="<%=producto.product_name%>">
+                    <input class="input-text nombre" type="text" name="nombre" value="<%=producto.product_name%>">
                 </div>
                 <div>
                     <label for="precio" class="label">Precio</label>
@@ -30,7 +35,7 @@
                 </div>
                 <div>
                     <label for="desc" class="label">Descripción</label>
-                    <textarea name="desc" maxlength="40"> <%=producto.product_desc%> </textarea>
+                    <textarea name="desc" maxlength="40" class="desc"><%=producto.product_desc%></textarea>
                 </div>
                 <div>
                     <label for="categoria" class="label">Categoría</label>
@@ -72,12 +77,12 @@
                 <div>
                     <label for="mainPic" class="label">Imagen</label>
                     <p class="current-img"><%=producto.product_image%></p>
-                    <input type="file" accept="image/*" name="mainPic">
+                    <input class="mainPic" type="file" accept="image/*" name="mainPic">
                 </div>
                 <div>
                     <label for="thumbnail" class="label">Thumbnail</label>
                     <p class="current-img"><%=producto.product_thumbnail%></p>
-                    <input type="file" accept="image/*" name="thumbnail">
+                    <input class="thumbnail" type="file" accept="image/*" name="thumbnail">
                 </div>
                 <div>
                     <label for="alt" class="label">Texto Alternativo</label>
@@ -92,6 +97,8 @@
         </div>
         
     </main>
+
+    <script src="/js/validacionProducts.js" type="text/javascript"></script>
 
     <%- include( "../partials/footer" ) %>
     

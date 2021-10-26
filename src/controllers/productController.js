@@ -4,6 +4,7 @@ const db = require("../database/models");
 const Op = db.Sequelize.Op;
 let reviews = require( "../data/reviews.json" );
 const { sequelize } = require("../database/models");
+const { validationResult } = require( "express-validator" );
 
 
 //Controlador productos
@@ -12,7 +13,7 @@ const controller = {
 
     list: (req, res) => {
 
-        if(req.query.query != ""){
+        if(req.query.query != undefined && req.query.query != ""){
 
             db.Products.findAll({
                 where: {
@@ -66,7 +67,34 @@ const controller = {
 
     create: (req, res) => {
 
-        console.log(req.body);
+        let errores = validationResult(req);
+
+        if(!errores.isEmpty()){
+
+            db.Categories.findAll()
+            .then((categorias) => {
+
+                db.CategoryTypes.findAll()
+                .then((tipos) => {
+                    
+                    db.Sizes.findAll()
+                    .then((tallas) => {
+                        
+                        db.Colors.findAll()
+                        .then((colores) => {
+
+                            res.render( "products/productCreate",  {"categorias":categorias, "tipos":tipos, "tallas":tallas, "colores": colores, "errores": errores.mapped(), "old":req.body})
+
+                        })
+
+                    })
+
+                })
+
+            })
+
+        }
+        else{
 
         db.Products.create({
 
@@ -99,6 +127,8 @@ const controller = {
             res.redirect( "/products/");
 
         })
+
+        }
         
     },
 

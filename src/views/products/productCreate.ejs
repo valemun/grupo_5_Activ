@@ -17,12 +17,30 @@
         </div>
 
         <div class="form-new">
+
+            <% if(locals && locals.errores) { %>
+
+                <% for (let error in errores) { %>
+                
+                <div class="valdiv">
+
+                    <p class="validaciones"><%=errores[error].msg%></p>
+
+                </div>
+                <% } %>
             
-            <form action="/products/" method="POST">
+            <% } %>
+
+            <div class="errores">
+                <ul class="validaciones">
+                </ul>
+            </div>
+            
+            <form class="form_product" action="/products/" method="POST">
 
                 <div>
                     <label for="nombre" class="label">Nombre</label>
-                    <input class="input-text" type="text" name="nombre">
+                    <input class="input-text nombre" type="text" name="nombre" <% if(locals && locals.errores) { %> value="<%= locals && old.nombre ? old.nombre: "" %>" <% } %> >
                 </div>
                 <div>
                     <label for="precio" class="label">Precio</label>
@@ -30,7 +48,7 @@
                 </div>
                 <div>
                     <label for="desc" class="label">Descripción</label>
-                    <textarea name="desc" maxlength="40"></textarea>
+                    <textarea name="desc" maxlength="40" class="desc"><% if(locals && locals.errores) { %><%= locals && old.desc?old.desc:""%><% } %></textarea>
                 </div>
                 <div>
                     <label for="categoria" class="label">Categoría</label>
@@ -70,11 +88,11 @@
                 </div>
                 <div>
                     <label for="mainPic" class="label">Imagen</label>
-                    <input type="file" accept="image/*" name="mainPic">
+                    <input class="mainPic" type="file" accept="image/*" name="mainPic">
                 </div>
                 <div>
                     <label for="thumbnail" class="label">Thumbnail</label>
-                    <input type="file" accept="image/*" name="thumbnail">
+                    <input class="thumbnail" type="file" accept="image/*" name="thumbnail">
                 </div>
                 <div>
                     <label for="alt" class="label">Texto alternativo</label>
@@ -88,6 +106,8 @@
         </div>
         
     </main>
+
+    <script src="/js/validacionProducts.js" type="text/javascript"></script>
 
     <%- include( "../partials/footer" ) %>
     
