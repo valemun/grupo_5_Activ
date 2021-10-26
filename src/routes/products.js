@@ -60,14 +60,14 @@ const validacionesProduct = [
 router.get( "/", productController.list );
 
 // Crear producto
-router.get( "/new", productController.new );
+router.get( "/new", adminMiddleware, productController.new );
 router.post( "/", validacionesProduct, productController.create );
 
 // Detalle de producto
 router.get( "/:id", productController.detail );
 
 // Edicion de producto
-router.get( "/:id/edit", productController.edit );
+router.get( "/:id/edit", adminMiddleware, productController.edit );
 router.put( "/:id", validacionesProduct, productController.update );
 
 // Borrar producto

@@ -59,26 +59,18 @@ const controller = {
     productList: (req, res) => {
         
         db.Products.findAll({
+            include: [
+                {model: db.Categories, as: "product_category_info"}, 
+                {model: db.CategoryTypes, as: "product_type_info"}
+        ]
         })
         .then((products) => {
 
-            db.Products.findAll({
-                where: {
-                    product_category: 1
-                }
-            }).then((unisex)=>{
-
-                db.Products.findAll({
-                    where:{
-                        product_category:2
-                    }
-                }).then((mujeres)=>{
-
-                    db.Products.findAll({
-                        where: {
-                            product_category:3
-                        }
-                    }).then((hombres) => {
+            db.Categories.findAll({
+                include: [
+                    {model: db.Products, as: "products_info"}, 
+            ]
+            }).then((categories)=>{
 
                         return res.status(200).json({
 
@@ -88,10 +80,15 @@ const controller = {
                                 url: "/api/products"
                             },
                             categories: {
-                                unisex: unisex.length,
-                                mujeres: mujeres.length,
-                                hombre: hombres.length
-                            },
+                            categories_total: categories.length,
+                            categories_info:
+                            categories.map((category) => {
+                                return {
+                                    category_id: category.category_id,
+                                    category_name: category.category_name,
+                                    category_total: category.products_info.length
+                                }
+                            })},
                             data: products.map((product) => {
                                 return {
                                     product_id: product.product_id,
@@ -99,17 +96,15 @@ const controller = {
                                     product_price: product.product_price,
                                     product_desc: product.product_desc,
                                     product_category: product.product_category,
+                                    product_category_info: product.product_category_info,
                                     product_type: product.product_type,
+                                    product_type_info: product.product_type_info,
                                     product_image: product.product_image,
                                     product_thumbnail: product.product_thumbnail,
                                     product_alt: product.product_alt,
                                     product_detail: "/api/products/"+product.product_id
                                 }
                             })
-                        })
-
-                    })
-
                 })
 
             })
@@ -118,6 +113,43 @@ const controller = {
         
         
     },
+
+    productLast: (req, res) => {
+        
+        db.Products.findAll({
+        })
+        .then((products) => {
+
+                let last = 0
+                last = products.length-1;
+
+
+                return res.status(200).json({
+
+                    meta: {
+                        status:200,
+                        url: "/api/products/last"
+                    },
+                    data: {
+                            product_id: products[last].product_id,
+                            product_name: products[last].product_name,
+                            product_price: products[last].product_price,
+                            product_desc: products[last].product_desc,
+                            product_category: products[last].product_category,
+                            product_type: products[last].product_type,
+                            product_image: products[last].product_image,
+                            product_thumbnail: products[last].product_thumbnail,
+                            product_alt: products[last].product_alt,
+                            product_detail: "/api/products/"+products[last].product_id
+                        }
+                })
+
+        });
+        
+        
+    },
+
+    
 
     productDetail: (req, res) => {
 

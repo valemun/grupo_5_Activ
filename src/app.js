@@ -6,6 +6,7 @@ const publicPath = path.resolve( "public" );
 const methodOverride = require( "method-override" );
 const session = require( "express-session" );
 const cookieParser = require( "cookie-parser" );
+const cors = require( "cors" );
 
 //Importar middlewares
 const cookiesMiddleware = require( "./middlewares/cookiesMiddleware" );
@@ -35,12 +36,20 @@ app.use(session( {secret: "Activ guarda tus secretos", resave: true,
 saveUninitialized: true}));
 app.use(cookieParser());
 
+//Cors
+const corsOptions ={
+    origin:'*', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200,
+ }
+ app.use(cors(corsOptions))
+ 
 //Middlewares
 app.use( cookiesMiddleware );
 app.use( sessionMiddleware );
 
 //Correr servidor
-app.listen( 3000, () => {
+app.listen( 3001, () => {
     console.log( "Servidor corriendo" );
 });
 
