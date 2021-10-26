@@ -164,3 +164,30 @@
 <ul>
     <li>Procrastinar iniciar una tarea por temor a su dificultad</li>
 </ul>
+
+<h2>Sprint 7</h2>
+
+<h3>Comenzar a hacer:</h3>
+<ul>
+    <li>Planificar todas las actividades restantes para tener un producto viable</li>
+</ul>
+
+<h3>Hacer más:</h3>
+  <ul>  
+    <li>Priorizar los elementos más importantes del sprint</li>
+</ul>
+
+<h3>Continuar haciendo:</h3>
+<ul>
+  <li>Separar las actividades en pequeñas metas de avance</li>
+</ul>
+
+<h3>Hacer menos:</h3>
+<ul>
+    <li>Procrastinar entre actividades</li>
+</ul>
+
+<h3>Dejar de hacer:</h3>
+<ul>
+    <li>Perder tiempo en iniciar la siguiente tarea después de terminar la pasada</li>
+</ul>
