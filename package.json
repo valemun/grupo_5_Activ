@@ -4,13 +4,14 @@
   "description": "ecommerce de ropa deportiva",
   "main": "/src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/valemun/grupo_5_Activ.git"
   },
-  "author": "natalie y valeria",
+  "author": "Valeria",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/valemun/grupo_5_Activ/issues"

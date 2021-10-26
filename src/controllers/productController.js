@@ -26,7 +26,22 @@ const controller = {
 
         });
 
-        }else{
+        }else if(req.query.type != undefined && req.query.type != ""){
+
+            db.Products.findAll({include: [
+                {model: db.CategoryTypes, as: "product_type_info"}
+                ]
+            })
+            .then((productos) => {
+
+            let productsCategory = productos.filter((product) => {
+                return product.product_type_info.category_type_name == req.query.type
+            })
+            
+            res.render( "products/productList", {"productos":productsCategory} );
+
+        });
+        } else{
 
             db.Products.findAll()
             .then((productos) => {
@@ -110,21 +125,28 @@ const controller = {
         })
         .then((product) => {
 
-            for(i=0; i<req.body.talla.length; i++){
-                db.ProductSizes.create({
-                    product_id: product.product_id,
-                    size_id: req.body.talla[i]
-                })
-            }
-            
-            for(i=0; i<req.body.color.length; i++){
-                db.ProductColors.create({
-                    product_id: product.product_id,
-                    color_id: req.body.color[i]
-                })
+            const saveTallayColor = async() => {
+
+                for(i=0; i<req.body.talla.length; i++){
+                    db.ProductSizes.create({
+                        product_id: product.product_id,
+                        size_id: req.body.talla[i]
+                    })
+                }
+                
+                for(i=0; i<req.body.color.length; i++){
+                    db.ProductColors.create({
+                        product_id: product.product_id,
+                        color_id: req.body.color[i]
+                    })
+                }
+
+                return true;
             }
 
-            res.redirect( "/products/");
+            saveTallayColor().then((response) => {
+                res.redirect( "/products/");
+            })
 
         })
 
@@ -235,23 +257,30 @@ const controller = {
                         }
                     })
                     .then(() => {
-    
-                        for(i=0; i<req.body.talla.length; i++){
-                            db.ProductSizes.create({
-                                product_id: req.params.id,
-                                size_id: req.body.talla[i]
-                            })
+
+                        const saveTallayColor = async() => {
+
+                            for(i=0; i<req.body.talla.length; i++){
+                                db.ProductSizes.create({
+                                    product_id: req.params.id,
+                                    size_id: req.body.talla[i]
+                                })
+                            }
+                            
+                            for(i=0; i<req.body.color.length; i++){
+                                db.ProductColors.create({
+                                    product_id: req.params.id,
+                                    color_id: req.body.color[i]
+                                })
+                            }
+
+                            return true;
                         }
+
+                        saveTallayColor().then((response) => {
+                            res.redirect( "/products/"+req.params.id);
+                        })
                         
-                        for(i=0; i<req.body.color.length; i++){
-                            db.ProductColors.create({
-                                product_id: req.params.id,
-                                color_id: req.body.color[i]
-                            })
-                        }
-            
-                        res.redirect( "/products/"+req.params.id);
-    
                     })
     
                 })
