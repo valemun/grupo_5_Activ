@@ -15,6 +15,7 @@ const sessionMiddleware = require( "./middlewares/sessionMiddleware" );
 const indexRouter = require( "./routes/index" );
 const productsRouter = require( "./routes/products" );
 const userRouter = require( "./routes/user" );
+const apiRouter = require( "./routes/api" );
 
 //Definición de archivos estáticos
 app.use( express.static( publicPath ));
@@ -47,3 +48,5 @@ app.listen( 3000, () => {
 app.use( "/", indexRouter );
 app.use( "/user", userRouter );
 app.use( "/products", productsRouter );
+app.use( "/api", apiRouter );
+
